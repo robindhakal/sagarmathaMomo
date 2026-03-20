@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sagarmatha Momo</title>
+  <meta name="description" content="Sagarmatha Momo serves handcrafted momos, curries, rice dishes, snacks, desserts, and drinks in Pflugerville." />
+  <meta property="og:title" content="Sagarmatha Momo" />
+  <meta property="og:description" content="Handcrafted momos, curries, rice dishes, snacks, desserts, and drinks in Pflugerville." />
+  <meta property="og:image" content="https://sagarmathamomo.com/assets/products/SadhekoMomo.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagarmatha Momo" />
+  <meta name="twitter:description" content="Handcrafted momos, curries, rice dishes, snacks, desserts, and drinks in Pflugerville." />
+  <meta name="twitter:image" content="https://sagarmathamomo.com/assets/products/SadhekoMomo.jpeg" />
+  <style>
+    :root {
+      --saffron: #ea7618;
+      --ember: #bf4a17;
+      --gold: #f1bb57;
+      --cream: #fff8ef;
+      --snow: #fffdf9;
+      --mist: #f4ecdf;
+      --ridge: #315fb7;
+      --night: #1d2740;
+      --text: #2f261d;
+      --muted: #6c5c4a;
+      --line: rgba(36, 31, 25, 0.08);
+      --shadow: 0 18px 50px rgba(27, 22, 17, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(241, 187, 87, 0.2), transparent 22%),
+        linear-gradient(180deg, #fff5e4 0%, var(--cream) 30%, #fffaf3 100%);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-inner,
+    .hero-inner,
+    section,
+    footer {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 248, 239, 0.9);
+      border-bottom: 1px solid rgba(191, 74, 23, 0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand img {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: transparent;
+      box-shadow: 0 14px 30px rgba(191, 74, 23, 0.24);
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .brand-copy strong,
+    .hero-copy h1,
+    .section-title,
+    .menu-group-header h3,
+    .visit-card h2 {
+      font-family: Baskerville, "Times New Roman", serif;
+    }
+
+    .brand-copy strong {
+      color: var(--ember);
+      font-size: 1.9rem;
+    }
+
+    .brand-copy span {
+      font-size: 1rem;
+      color: #836846;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 700;
+      color: var(--night);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ember);
+    }
+
+    .nav-links .nav-cta {
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      color: var(--snow);
+      background: linear-gradient(135deg, var(--ember), var(--saffron));
+      box-shadow: 0 12px 24px rgba(191, 74, 23, 0.2);
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: var(--snow);
+      scroll-margin-top: 7.5rem;
+      background:
+        linear-gradient(115deg, rgba(29, 39, 64, 0.92), rgba(49, 95, 183, 0.82) 45%, rgba(234, 118, 24, 0.74)),
+        url("assets/products/SteamedMomo.png") center/cover;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.18), transparent 18%),
+        radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.1), transparent 16%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 5rem 0;
+    }
+
+    .hero-mark {
+      width: clamp(150px, 22vw, 240px);
+      border-radius: 50%;
+      object-fit: cover;
+      background: transparent;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.24));
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(3rem, 7vw, 5.3rem);
+      line-height: 0.95;
+      margin-bottom: 1rem;
+      text-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-copy p {
+      max-width: 640px;
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions,
+    .hero-badges,
+    .visit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .cta,
+    .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.92rem 1.35rem;
+      font-weight: 800;
+    }
+
+    .cta {
+      color: var(--night);
+      background: linear-gradient(135deg, var(--gold), #ffda88);
+      box-shadow: 0 14px 30px rgba(241, 187, 87, 0.28);
+    }
+
+    .cta-secondary {
+      color: var(--snow);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 0.65rem 0.95rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 0.92rem;
+    }
+
+    .hero-panel {
+      border-radius: 30px;
+      background: rgba(255, 249, 239, 0.94);
+      color: var(--night);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-panel img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    .hero-panel-copy {
+      padding: 1.25rem;
+    }
+
+    .hero-panel-copy strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-panel-copy p {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 4.2rem 0;
+      scroll-margin-top: 7.5rem;
+    }
+
+    .section-header {
+      display: grid;
+      gap: 0.75rem;
+      justify-items: center;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ember);
+      font-weight: 800;
+    }
+
+    .section-title {
+      font-size: clamp(2.1rem, 4vw, 3.25rem);
+      color: var(--night);
+    }
+
+    .menu-title {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .menu-frame,
+    .catering-card,
+    .visit-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .menu-frame {
+      padding: 1.6rem;
+      background:
+        linear-gradient(180deg, rgba(244, 236, 223, 0.58), rgba(255, 255, 255, 0.84)),
+        rgba(255, 255, 255, 0.84);
+    }
+
+    .menu-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+      justify-content: center;
+    }
+
+    .menu-categories a {
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: rgba(49, 95, 183, 0.08);
+      color: var(--ridge);
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+    }
+
+    .menu-categories a:hover,
+    .menu-categories a:focus-visible {
+      background: linear-gradient(135deg, var(--ember), var(--saffron));
+      color: var(--snow);
+    }
+
+    .menu-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .menu-groups {
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    .menu-group {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 1.25rem;
+      align-items: stretch;
+      padding: 1rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(49, 95, 183, 0.08);
+      scroll-margin-top: 8.5rem;
+    }
+
+    .menu-group-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .menu-group-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+    }
+
+    .menu-group-header h3 {
+      font-size: 1.8rem;
+      color: var(--night);
+    }
+
+    .menu-group-header span {
+      color: var(--ember);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+    }
+
+    .menu-group p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem 1rem;
+      list-style: none;
+    }
+
+    .menu-item-card {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 0.85rem;
+      align-items: start;
+      padding: 0.8rem;
+      border-radius: 18px;
+      background: var(--snow);
+      border: 1px solid rgba(36, 31, 25, 0.06);
+    }
+
+    .menu-item-card img {
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: var(--mist);
+    }
+
+    .menu-item-copy strong {
+      display: block;
+      color: var(--night);
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .menu-item-copy p {
+      margin-bottom: 0.55rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .menu-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.28rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .tag.vegan {
+      background: rgba(72, 142, 81, 0.12);
+      color: #356d3e;
+    }
+
+    .tag.vegetarian {
+      background: rgba(241, 187, 87, 0.18);
+      color: #8f5e03;
+    }
+
+    .tag.gf {
+      background: rgba(49, 95, 183, 0.12);
+      color: #224d9d;
+    }
+
+    .visit-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 1.2rem;
+      background:
+        linear-gradient(135deg, rgba(29, 39, 64, 0.97), rgba(49, 95, 183, 0.92) 55%, rgba(234, 118, 24, 0.85));
+      color: var(--snow);
+    }
+
+    .catering-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 1.25rem;
+      padding: 1.3rem;
+      background:
+        linear-gradient(135deg, rgba(29, 39, 64, 0.96), rgba(49, 95, 183, 0.9) 58%, rgba(234, 118, 24, 0.82));
+      color: var(--snow);
+    }
+
+    .catering-copy,
+    .catering-image {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .catering-copy {
+      padding: 1.7rem;
+      background: rgba(17, 24, 40, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .catering-copy h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .catering-copy p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 640px;
+    }
+
+    .catering-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.2rem;
+    }
+
+    .catering-image {
+      min-height: 260px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .catering-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .visit-copy,
+    .visit-map {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .visit-copy {
+      padding: 1.8rem;
+      background: rgba(17, 24, 40, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .visit-copy h2 {
+      margin-top: 0;
+    }
+
+    .visit-copy p {
+      color: rgba(255, 255, 255, 0.88);
+      margin-top: 0.45rem;
+    }
+
+    .visit-details {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.3rem;
+    }
+
+    .nearby-note {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .nearby-note p {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nearby-card {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 0.85rem;
+      align-items: center;
+      margin-top: 0.4rem;
+      padding: 0.7rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nearby-card img {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .visit-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--snow);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .map-options {
+      margin-top: 1.2rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.9rem 1rem;
+    }
+
+    .map-options summary {
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    .map-options summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .map-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.9rem;
+    }
+
+    .map-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--snow);
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .map-options.map-options-cta {
+      margin-top: 1.2rem;
+      padding: 0;
+      background: transparent;
+      border: 0;
+    }
+
+    .map-options.map-options-cta summary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.92rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--night);
+      background: linear-gradient(135deg, var(--gold), #ffda88);
+      box-shadow: 0 14px 30px rgba(241, 187, 87, 0.28);
+    }
+
+    .map-options.map-options-cta .map-links {
+      margin-top: 1rem;
+    }
+
+    .visit-actions {
+      margin-top: 1.2rem;
+    }
+
+    .visit-map {
+      min-height: 320px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 1.25rem;
+    }
+
+    .visit-map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: 0;
+      display: block;
+    }
+
+    footer {
+      padding: 1.4rem 0 6rem;
+      text-align: center;
+      color: #7f6d5c;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .catering-card,
+      .menu-group,
+      .visit-card {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-items {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .hero-inner {
+        padding: 4rem 0;
+      }
+
+      .menu-frame,
+      .visit-card {
+        padding: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#home" id="home-link">
+        <img src="assets/products/sagarmathaMomoLogo.png" alt="Sagarmatha Momo logo" />
+        <span class="brand-copy">
+          <strong>Sagarmatha Momo</strong>
+          <span>Nepalese and Indian Kitchen</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#catering">Catering</a>
+        <a href="#visit">Visit</a>
+        <a class="nav-cta" href="#order" id="order-online-button">Order Online</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <img class="hero-mark" src="assets/products/sagarmathaMomoLogo.png" alt="Sagarmatha Momo logo" />
+        <h1>Fresh momos, curries, and comfort food in Pflugerville.</h1>
+        <p>
+          Welcome to our Kitchen! We are pleased to share with you a little taste from Nepal.
+          Come join us and try our delectable momo!
+        </p>
+        <div class="hero-badges">
+          <span class="badge">Family-Owned</span>
+          <span class="badge">Pickup & Delivery</span>
+          <span class="badge">Quick Dine-In</span>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo dish" />
+        <div class="hero-panel-copy">
+          <strong>Signature House Favorite</strong>
+          <p>Steamed momo tossed with fresh cut herbs and seasonings including ginger, green onions, and house special tomato based sauce.</p>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="menu">
+    <div class="section-header">
+      <h2 class="section-title menu-title">Menu</h2>
+      <p class="section-subtitle">
+        Many of options to fit nearly every tastebud. Try our Momo dumplings today!
+      </p>
+    </div>
+
+    <div class="menu-frame">
+      <div class="menu-categories">
+        <a href="#momos">Momos</a>
+        <a href="#curries">Curries</a>
+        <a href="#rice-noodles">Rice & Noodles</a>
+        <a href="#snacks">Snacks</a>
+        <a href="#dessert">Dessert</a>
+        <a href="#sides">Sides</a>
+        <a href="#drinks">Drinks</a>
+      </div>
+      <div class="menu-legend">
+        <span class="tag vegan">Vegan</span>
+        <span class="tag vegetarian">Vegetarian</span>
+        <span class="tag gf">Gluten Free</span>
+      </div>
+
+      <div class="menu-groups">
+        <article class="menu-group" id="momos">
+          <div class="menu-group-image">
+            <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo platter" />
+          </div>
+          <div>
+            <div class="menu-group-header">
+              <h3>Momos</h3>
+            </div>
+            <p>A variety of choices, from our steamed to our bhaktapur jhol, come in your preferred spice level.</p>
+            <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo" />
+                <div class="menu-item-copy">
+                  <strong>Sadheko Momo</strong>
+                  <p>Steamed momo tossed with fresh cut herbs and seasonings including ginger, green onions, and house special tomato based sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/SteamedMomo.png" alt="Steamed momo" />
+                <div class="menu-item-copy">
+                  <strong>Steamed Momo</strong>
+                  <p>Steamed momo warmed to perfection and served with our house dipping sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/FriedMomo.png" alt="Fried momo" />
+                <div class="menu-item-copy">
+                  <strong>Fried Momo</strong>
+                  <p>Fried momo with a golden outer layer and a savory filling that pairs well with our house sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Bhaktapur_Jhol_Momo.jpeg" alt="Bhaktapur jhol momo" />
+                <div class="menu-item-copy">
+                  <strong>Bhaktapur Jhol Momo</strong>
+                  <p>Steamed momo served in a cold jhol soup made with soyabean and spices, giving it a chilled, tangy flavor.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/TatoJholMomo.jpeg" alt="Tato jhol momo" />
+                <div class="menu-item-copy">
+                  <strong>Tato Jhol Momo</strong>
+                  <p>Steamed momo served in tomato based soup with bright, savory finish.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/ChillyMomo.jpeg" alt="Chilly momo" />
+                <div class="menu-item-copy">
+                  <strong>Chilly Momo</strong>
+                  <p>Fried momo sauteed with onions, peppers, and house chili sauce for a bold and flavorful finish.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-group" id="curries">
+          <div class="menu-group-image">
+            <img src="assets/products/ChickenShahiKorma.jpeg" alt="Chicken shahi korma" />
+          </div>
+          <div>
+            <div class="menu-group-header">
+              <h3>Curry</h3>
+            </div>
+            <p>Our curries were especially selected to provide both chicken and vegetable options. <strong>All curries are served with rice.</strong></p>
+            <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/ChickenCurry.jpeg" alt="Chicken curry" />
+                <div class="menu-item-copy">
+                  <strong>Chicken Curry</strong>
+                  <p>Bone-in chicken simmered with onion, tomato, garlic, ginger, and traditional house spices.</p>
+                  <div class="menu-tags"><span class="tag gf">GF</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/ChickenCurry.jpeg" alt="Boneless chicken curry" />
+                <div class="menu-item-copy">
+                  <strong>Boneless Chicken Curry</strong>
+                  <p>Boneless chicken cooked in a savory onion-tomato curry with herbs, spices, and balanced heat.</p>
+                  <div class="menu-tags"><span class="tag gf">GF</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/ChickenShahiKorma.jpeg" alt="Chicken shahi korma" />
+                <div class="menu-item-copy">
+                  <strong>Chicken Shahi Korma</strong>
+                  <p>Boneless chicken curried in a mild, creamy sauce with cashew notes, herbs, and delicate spices.</p>
+                  <div class="menu-tags"><span class="tag gf">GF</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/AlooBodiTama.jpeg" alt="Aloo bodi tama" />
+                <div class="menu-item-copy">
+                  <strong>Aloo Bodi Tama</strong>
+                  <p>Traditional Nepali curry with potatoes, black-eyed peas, and bamboo shoot in a deeply savory sauce.</p>
+                  <div class="menu-tags">
+                    <span class="tag vegan">Vegan</span>
+                    <span class="tag gf">GF</span>
+                  </div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/AlooCauli.jpeg" alt="Aloo cauli" />
+                <div class="menu-item-copy">
+                  <strong>Aloo Cauli</strong>
+                  <p>Potatoes and cauliflower cooked until tender in a lightly spiced homestyle curry.</p>
+                  <div class="menu-tags">
+                    <span class="tag vegan">Vegan</span>
+                    <span class="tag gf">GF</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-group" id="rice-noodles">
+          <div class="menu-group-image">
+            <img src="assets/products/Biryani.jpg" alt="Chicken biryani" />
+          </div>
+          <div>
+            <div class="menu-group-header">
+              <h3>Rice and Noodles</h3>
+            </div>
+            <p>Simple dishes with a lot of flavor are words to explain how rich in seasoniing our rice and even noodles compare. Too good to share!</p>
+            <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/Biryani.jpg" alt="Chicken biryani" />
+                <div class="menu-item-copy">
+                  <strong>Chicken Biryani</strong>
+                  <p>Fragrant basmati rice layered with seasoned chicken, herbs, and aromatic spices.</p>
+                  <div class="menu-tags"><span class="tag gf">GF</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/FriedRice.jpeg" alt="Fried rice" />
+                <div class="menu-item-copy">
+                  <strong>Fried Rice</strong>
+                  <p>Stir-fried rice with mixed vegetables, spring onions, and classic savory seasoning.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Chowmein.jpeg" alt="Chowmein" />
+                <div class="menu-item-copy">
+                  <strong>Chowmein</strong>
+                  <p>Stir-fried noodles tossed with mixed vegetables and house seasoning for a familiar street-style favorite.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-group" id="snacks">
+          <div class="menu-group-image">
+            <img src="assets/products/Samosas.jpeg" alt="Samosas" />
+          </div>
+          <div>
+            <div class="menu-group-header">
+              <h3>Snacks</h3>
+            </div>
+            <p>A burst full of flavor with every bite, these appetizer sized portions deliver some of the lightest options.</p>
+            <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/Samosas.jpeg" alt="Samosas" />
+                <div class="menu-item-copy">
+                  <strong>Samosas</strong>
+                  <p>Crisp triangular pastries filled with seasoned potatoes, peas, and warm spices.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Chicken65.jpeg" alt="Chicken 65" />
+                <div class="menu-item-copy">
+                  <strong>Chicken 65</strong>
+                  <p>Light, crispy chicken tossed with chili, spices, and herbs for a bold appetizer-style bite.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/GobiManchurian.jpeg" alt="Gobi manchurian" />
+                <div class="menu-item-copy">
+                  <strong>Gobi Manchurian</strong>
+                  <p>Crispy cauliflower sauteed in a savory-spicy house sauce with herbs and aromatics.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/ChickenChilly.jpeg" alt="Chicken chilly" />
+                <div class="menu-item-copy">
+                  <strong>Chicken Chilly</strong>
+                  <p>Boneless chicken cooked with onions, bell peppers, jalapeno, and house chili sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/PaneerChilly.jpeg" alt="Paneer chilly" />
+                <div class="menu-item-copy">
+                  <strong>Paneer Chilly</strong>
+                  <p>Paneer cubes tossed with onions, peppers, jalapeno, and a savory-spicy chili sauce.</p>
+                  <div class="menu-tags">
+                    <span class="tag vegetarian">Vegetarian</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="menu-groups">
+        <article class="menu-group" id="dessert">
+          <div class="menu-group-image">
+            <img src="assets/products/Rasmalai.jpeg" alt="Sagarmatha Momo dessert section" />
+          </div>
+          <div>
+            <div class="menu-group-header">
+              <h3>Dessert</h3>
+            </div>
+            <p>In for a sweet treat, light and tasty, our desserts come from those traditionally served.</p>
+            <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/Kheer.jpeg" alt="Kheer" />
+                <div class="menu-item-copy">
+                  <strong>Kheer</strong>
+                  <p>Traditional rice pudding slowly cooked for a creamy, lightly sweet finish.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/LalMohan.jpeg" alt="Lal mohan" />
+                <div class="menu-item-copy">
+                  <strong>Lal Mohan</strong>
+                  <p>Soft milk-based sweet soaked in syrup for a richer dessert option.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Rasmalai.jpeg" alt="Rasmalai" />
+                <div class="menu-item-copy">
+                  <strong>Rasmalai</strong>
+                  <p>Soft cheese patties served in sweetened milk for a smooth, delicate dessert.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-group" id="sides">
+          <div class="menu-group-image">
+            <img src="assets/products/SpecialParatha.jpeg" alt="Sagarmatha Momo sides section" />
+          </div>
+          <div>
+            <div class="menu-group-header">
+              <h3>Sides</h3>
+            </div>
+            <p>The add-ons keep coming with some of our easiest pairings. Our radish pickle is availble in large sizes as well.</p>
+            <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/SpecialParatha.jpeg" alt="Special paratha" />
+                <div class="menu-item-copy">
+                  <strong>Special Paratha</strong>
+                  <p>Flaky layered flatbread that pairs especially well with rich curries and house specials.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Fries.jpeg" alt="Fries" />
+                <div class="menu-item-copy">
+                  <strong>Fries</strong>
+                  <p>Golden fried potato strips served as a simple shareable side.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/BasmatiRice.jpeg" alt="Basmati rice" />
+                <div class="menu-item-copy">
+                  <strong>Basmati Rice</strong>
+                  <p>Steamed basmati rice served as a classic side for curries and sauced dishes.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/RadishPickel.jpeg" alt="Radish pickle" />
+                <div class="menu-item-copy">
+                  <strong>Radish Pickle</strong>
+                  <p>Sharp and tangy pickle that adds brightness alongside rich savory plates.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Raita.jpeg" alt="Raita" />
+                <div class="menu-item-copy">
+                  <strong>Raita</strong>
+                  <p>Cooling yogurt accompaniment that balances spicier dishes and heavier curries.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-group" id="drinks">
+          <div class="menu-group-image">
+            <img src="assets/products/MangoLassi.jpeg" alt="Sagarmatha Momo drinks section" />
+          </div>
+          <div>
+            <div class="menu-group-header">
+              <h3>Drinks</h3>
+            </div>
+            <p>To help calm the savory tastes, we offer an in-house made mango lassi. Try today!</p>
+            <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/MangoLassi.jpeg" alt="Mango lassi" />
+                <div class="menu-item-copy">
+                  <strong>Mango Lassi</strong>
+                  <p>Refreshing yogurt drink blended with mango for a smooth, sweet finish.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Soda.png" alt="Soda" />
+                <div class="menu-item-copy">
+                  <strong>Soda</strong>
+                  <p>Classic bottled soda options to pair with spicy and savory dishes.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/water.png" alt="Bottled water" />
+                <div class="menu-item-copy">
+                  <strong>Bottled Water</strong>
+                  <p>Simple bottled refreshment for a clean, straightforward beverage option.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="catering">
+    <div class="catering-card">
+      <div class="catering-copy">
+        <h2>Catering for Events</h2>
+        <p>
+          From family gatherings to office lunches and community celebrations, Sagarmatha Momo brings bold flavor and crowd-pleasing favorites to events of every size.
+        </p>
+        <p>
+          For customized items and pricing, please call us to create a catering order that fits your event.
+        </p>
+        <div class="catering-actions">
+          <a class="cta" href="tel:+15125548941">Call for Catering</a>
+          <a class="cta-secondary" href="#visit">Visit Us</a>
+        </div>
+      </div>
+      <div class="catering-image">
+        <img src="assets/Catering.jpeg" alt="Sagarmatha Momo catering dishes" />
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="visit-card">
+      <div class="visit-copy">
+        <h2>Visit Sagarmatha Momo</h2>
+        <div class="visit-map">
+          <iframe
+            title="Sagarmatha Momo map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=20205%20FM%20685%20Suite%20250%2C%20Pflugerville%2C%20TX%2078660&z=15&output=embed">
+          </iframe>
+        </div>
+        <p>Pickup, delivery, and quick dine-in available.</p>
+        <div class="visit-details">
+          <a class="visit-link" href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">
+            <strong>20205 FM 685 Suite 250, Pflugerville, TX 78660</strong>
+          </a>
+          <a class="visit-link" href="tel:+15125548941">
+            <strong>(512) 554-8941</strong>
+          </a>
+        </div>
+        <div class="visit-actions">
+          <details class="map-options map-options-cta">
+            <summary>Get Directions</summary>
+            <div class="map-links">
+              <a href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">Google Maps</a>
+              <a href="https://maps.apple.com/?q=20205+FM+685+Suite+250,+Pflugerville,+TX+78660" target="_blank" rel="noopener noreferrer">Apple Maps</a>
+              <a href="https://waze.com/ul/h9v6t7mmsb" target="_blank" rel="noopener noreferrer">Waze</a>
+            </div>
+          </details>
+        </div>
+        <div class="nearby-note">
+          <p>Nearby Attraction</p>
+          <div class="nearby-card">
+            <img src="assets/Temple.png" alt="Nepalese Temple Pashupatinath" />
+            <a class="visit-link" href="https://maps.app.goo.gl/AzMzoWY6wipX69C17" target="_blank" rel="noopener noreferrer">
+              <strong>Nepalese Temple Pashupatinath</strong>
+            </a>
+          </div>
+        </div>
+        <div class="visit-actions">
+          <a class="cta-secondary" href="#home">Back to Top</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Sagarmatha Momo. Nepalese and Indian comfort food in Pflugerville.
+  </footer>
+
+  <script>
+    !function(e,t,r,n){var o,c,s;o=e.document,c=t.children[0],s=o.createElement("script"),e.StorefrontSDKObject="StorefrontSDK",e[e.StorefrontSDKObject]={executeCommand:function(t,r){e[e.StorefrontSDKObject].buffer.push([t,r])},buffer:[]},s.async=1,s.src="https://web-assets.cdn4dd.com/prod/storefront-sdk/latest/app.js",t.insertBefore(s,c)}(window,document.head);
+    var storefrontTrigger = null;
+    var triggerText = 'Order Pickup & Delivery';
+
+    function findStorefrontTrigger() {
+      var candidates = Array.from(document.querySelectorAll('button, a'));
+      return candidates.find(function (element) {
+        return element.id !== 'order-online-button' &&
+          element.textContent &&
+          element.textContent.trim() === triggerText;
+      }) || null;
+    }
+
+    function cacheAndHideStorefrontTrigger() {
+      storefrontTrigger = findStorefrontTrigger();
+      if (!storefrontTrigger) return;
+
+      storefrontTrigger.style.position = 'fixed';
+      storefrontTrigger.style.left = '-9999px';
+      storefrontTrigger.style.bottom = 'auto';
+      storefrontTrigger.style.opacity = '0';
+      storefrontTrigger.style.pointerEvents = 'none';
+    }
+
+    var storefrontObserver = new MutationObserver(function () {
+      if (!storefrontTrigger) {
+        cacheAndHideStorefrontTrigger();
+      }
+    });
+
+    storefrontObserver.observe(document.body, { childList: true, subtree: true });
+
+    document.getElementById('home-link')?.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('order-online-button')?.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (!storefrontTrigger) {
+        cacheAndHideStorefrontTrigger();
+      }
+
+      if (storefrontTrigger) {
+        storefrontTrigger.click();
+      }
+    });
+    StorefrontSDK.executeCommand('renderFloatingButton',
+      {
+        businessId: 18291929,
+        businessSlug: 'SagarmathaMomo',
+        floatingBar: true,
+        position: 'bottom',
+        buttonAlignment: 'center',
+        backgroundColor: 'transparent',
+        buttonBackgroundColor: '#bf4a17',
+        borderColor: 'transparent',
+        buttonText: triggerText,
+        showModal: true,
+      }
+    )
+  </script>
+</body>
+</html>
