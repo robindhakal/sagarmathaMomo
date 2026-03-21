@@ -240,12 +240,41 @@
     }
 
     .hero-panel {
+      position: relative;
       border-radius: 30px;
       background: rgba(255, 249, 239, 0.94);
       color: var(--night);
       border: 1px solid rgba(255, 255, 255, 0.24);
       box-shadow: var(--shadow);
       overflow: hidden;
+    }
+
+    .hero-slider {
+      position: relative;
+      min-height: 100%;
+    }
+
+    .hero-slider-controls {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 1.25rem 1.2rem;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      opacity: 0;
+      transform: translateX(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      pointer-events: none;
+    }
+
+    .hero-slide.is-active {
+      position: relative;
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
     }
 
     .hero-panel img {
@@ -267,6 +296,44 @@
 
     .hero-panel-copy p {
       color: var(--muted);
+    }
+
+    .hero-slide-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(36, 31, 25, 0.08);
+    }
+
+    .hero-slide-timer {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ember);
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 0.55rem;
+    }
+
+    .hero-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(49, 95, 183, 0.18);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .hero-dot.is-active {
+      background: linear-gradient(135deg, var(--ember), var(--saffron));
+      transform: scale(1.12);
     }
 
     section {
@@ -516,6 +583,60 @@
       max-width: 640px;
     }
 
+    .catering-price-note {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.25rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(241, 187, 87, 0.18);
+      border: 1px solid rgba(255, 218, 136, 0.3);
+      color: #fff4cf;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .catering-menu {
+      margin-top: 1.3rem;
+      padding: 0.85rem 0.95rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .catering-menu-header {
+      padding-bottom: 0.55rem;
+      margin-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .catering-menu-header strong,
+    .catering-menu-item strong {
+      color: var(--snow);
+    }
+
+    .catering-menu-list {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .catering-menu-item {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.94rem;
+      line-height: 1.4;
+    }
+
+    .catering-menu-item strong {
+      font-size: 0.96rem;
+    }
+
+    .catering-menu-note {
+      margin-top: 0.75rem;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.9rem;
+    }
+
     .catering-actions {
       display: flex;
       flex-wrap: wrap;
@@ -722,6 +843,14 @@
         padding: 4rem 0;
       }
 
+      .hero-slide {
+        transform: translateY(18px);
+      }
+
+      .hero-slide.is-active {
+        transform: translateY(0);
+      }
+
       .menu-frame,
       .visit-card {
         padding: 1.3rem;
@@ -765,10 +894,47 @@
       </div>
 
       <aside class="hero-panel">
-        <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo dish" />
-        <div class="hero-panel-copy">
-          <strong>Signature House Favorite</strong>
-          <p>Steamed momo tossed with fresh cut herbs and seasonings including ginger, green onions, and house special tomato based sauce.</p>
+        <div class="hero-slider" id="hero-slider" aria-live="polite">
+          <article class="hero-slide is-active">
+            <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo dish" />
+            <div class="hero-panel-copy">
+              <strong>Sadheko Momo</strong>
+              <p>Steamed momo tossed with fresh cut herbs, ginger, green onions, and our house special tomato-based sauce.</p>
+              <div class="hero-slide-meta">
+                <span class="hero-slide-timer">Bold Flavor</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <img src="assets/products/ChickenCurry.jpeg" alt="Chicken curry bowl" />
+            <div class="hero-panel-copy">
+              <strong>Chicken Curry</strong>
+              <p>Bone-in chicken simmered with onion, tomato, garlic, ginger, and traditional house spices, served rich and comforting.</p>
+              <div class="hero-slide-meta">
+                <span class="hero-slide-timer">House Special Curry</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <img src="assets/products/Bhaktapur_Jhol_Momo.jpeg" alt="Bhaktapur jhol momo dish" />
+            <div class="hero-panel-copy">
+              <strong>Bhaktapur Jhol Momo</strong>
+              <p>Steamed momo served with a chilled, tangy jhol made with soybeans, spices, and a deep savory finish.</p>
+              <div class="hero-slide-meta">
+                <span class="hero-slide-timer">Street Favorate from Bhaktapur, Nepal</span>
+              </div>
+            </div>
+          </article>
+
+          <div class="hero-slider-controls">
+            <div class="hero-dots" aria-label="Featured dishes">
+              <button class="hero-dot is-active" type="button" aria-label="Show Sadheko Momo"></button>
+              <button class="hero-dot" type="button" aria-label="Show Chicken Curry"></button>
+              <button class="hero-dot" type="button" aria-label="Show Bhaktapur Jhol Momo"></button>
+            </div>
+          </div>
         </div>
       </aside>
     </div>
@@ -1141,6 +1307,39 @@
         <p>
           For customized items and pricing, please call us to create a catering order that fits your event.
         </p>
+        <p class="catering-price-note">Options available from $16* per person and above.</p>
+        <div class="catering-menu" aria-label="Catering tray menu">
+          <div class="catering-menu-header">
+            <strong>Catering Menu</strong>
+          </div>
+          <ul class="catering-menu-list">
+            <li class="catering-menu-item">
+              <strong>Appitizers and Snacks</strong><br />
+              Samosas, Chicken 65, Chicken/Paneer Chilly ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Main Meat</strong><br />
+              Chicken Curry (Bone-In/Boneless), Goat Curry (Bone-In) ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Main Veg</strong><br />
+              Aloo Bodi Tama, Aloo Cauli, Yellow Dal, Mustard Greens Saag ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Carbs</strong><br />
+              Basmati Rice, Pulao, Biryani ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Sides</strong><br />
+              Salads, Tomato Pickles, Radish Pickle ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Drink</strong><br />
+              Masala Milk Tea, Mango Lassi ...
+            </li>
+          </ul>
+          <p class="catering-menu-note"><strong>And many more ...</strong></p>
+        </div>
         <div class="catering-actions">
           <a class="cta" href="tel:+15125548941">Call for Catering</a>
           <a class="cta-secondary" href="#visit">Visit Us</a>
@@ -1251,6 +1450,67 @@
         storefrontTrigger.click();
       }
     });
+
+    var heroSlider = document.getElementById('hero-slider');
+    var heroSlides = heroSlider ? Array.from(heroSlider.querySelectorAll('.hero-slide')) : [];
+    var heroControls = heroSlider
+      ? Array.from(heroSlider.querySelectorAll('.hero-slider-controls .hero-dot'))
+      : [];
+    var activeHeroIndex = 0;
+    var heroInterval = null;
+
+    function setHeroSlide(index) {
+      heroSlides.forEach(function (slide, slideIndex) {
+        slide.classList.toggle('is-active', slideIndex === index);
+      });
+
+      heroControls.forEach(function (dot, dotIndex) {
+        dot.classList.toggle('is-active', dotIndex === index);
+        dot.setAttribute('aria-pressed', dotIndex === index ? 'true' : 'false');
+      });
+
+      activeHeroIndex = index;
+    }
+
+    function advanceHeroSlide() {
+      if (!heroSlides.length) return;
+      setHeroSlide((activeHeroIndex + 1) % heroSlides.length);
+    }
+
+    function startHeroSlider() {
+      if (heroInterval || heroSlides.length < 2) return;
+      heroInterval = window.setInterval(advanceHeroSlide, 3000);
+    }
+
+    function resetHeroSlider(index) {
+      if (heroInterval) {
+        window.clearInterval(heroInterval);
+        heroInterval = null;
+      }
+      setHeroSlide(index);
+      startHeroSlider();
+    }
+
+    heroControls.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        resetHeroSlider(index);
+      });
+    });
+
+    heroSlider?.addEventListener('mouseenter', function () {
+      if (heroInterval) {
+        window.clearInterval(heroInterval);
+        heroInterval = null;
+      }
+    });
+
+    heroSlider?.addEventListener('mouseleave', function () {
+      startHeroSlider();
+    });
+
+    setHeroSlide(0);
+    startHeroSlider();
+
     StorefrontSDK.executeCommand('renderFloatingButton',
       {
         businessId: 18291929,
