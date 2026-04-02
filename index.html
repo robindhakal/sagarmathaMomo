@@ -544,8 +544,8 @@
 
     .visit-card {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
+      grid-template-columns: minmax(0, 1.02fr) minmax(280px, 0.98fr);
+      gap: 1.2rem;
       padding: 1.2rem;
       background:
         linear-gradient(135deg, rgba(29, 39, 64, 0.97), rgba(49, 95, 183, 0.92) 55%, rgba(234, 118, 24, 0.85));
@@ -658,7 +658,8 @@
     }
 
     .visit-copy,
-    .visit-map {
+    .visit-map,
+    .visit-gallery {
       border-radius: 22px;
       overflow: hidden;
     }
@@ -793,6 +794,57 @@
       margin-top: 1.2rem;
     }
 
+    .visit-gallery {
+      display: grid;
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .visit-shot {
+      position: relative;
+      display: grid;
+      grid-template-rows: minmax(320px, 1fr) auto;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 18px 38px rgba(11, 14, 21, 0.22);
+      background: rgba(15, 20, 31, 0.34);
+    }
+
+    .visit-shot-frame {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 320px;
+      padding: 1rem;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 28%),
+        linear-gradient(135deg, rgba(49, 95, 183, 0.18), transparent 45%);
+    }
+
+    .visit-shot img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 16px;
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .visit-shot-copy {
+      padding: 0.9rem 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(17, 24, 40, 0.52);
+    }
+
+    .visit-shot-copy p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
     .visit-map {
       min-height: 320px;
       background: rgba(255, 255, 255, 0.08);
@@ -854,6 +906,14 @@
       .menu-frame,
       .visit-card {
         padding: 1.3rem;
+      }
+
+      .visit-shot {
+        grid-template-rows: minmax(240px, 1fr) auto;
+      }
+
+      .visit-shot-frame {
+        min-height: 240px;
       }
     }
   </style>
@@ -1393,6 +1453,24 @@
         <div class="visit-actions">
           <a class="cta-secondary" href="#home">Back to Top</a>
         </div>
+      </div>
+      <div class="visit-gallery" aria-label="Interior photos of Sagarmatha Momo">
+        <figure class="visit-shot">
+          <div class="visit-shot-frame">
+            <img src="assets/DineIn1.jpg" alt="Interior seating area at Sagarmatha Momo with front windows and tables" />
+          </div>
+          <div class="visit-shot-copy">
+            <p>Step inside and see the cozy space that welcomes every guest.</p>
+          </div>
+        </figure>
+        <figure class="visit-shot">
+          <div class="visit-shot-frame">
+            <img src="assets/DineIn2.jpg" alt="Additional interior view of Sagarmatha Momo seating area" />
+          </div>
+          <div class="visit-shot-copy">
+            <p>Get a feel for our welcoming space before you stop by.</p>
+          </div>
+        </figure>
       </div>
     </div>
   </section>
