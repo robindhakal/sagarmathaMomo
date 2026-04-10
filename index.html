@@ -1825,6 +1825,19 @@
       storefrontTrigger.style.pointerEvents = 'none';
     }
 
+    function openOrderModal() {
+      if (!storefrontTrigger) {
+        cacheAndHideStorefrontTrigger();
+      }
+
+      if (storefrontTrigger) {
+        storefrontTrigger.click();
+        return true;
+      }
+
+      return false;
+    }
+
     var storefrontObserver = new MutationObserver(function () {
       if (!storefrontTrigger) {
         cacheAndHideStorefrontTrigger();
@@ -1840,14 +1853,25 @@
 
     document.getElementById('order-online-button')?.addEventListener('click', function (event) {
       event.preventDefault();
-      if (!storefrontTrigger) {
-        cacheAndHideStorefrontTrigger();
-      }
-
-      if (storefrontTrigger) {
-        storefrontTrigger.click();
-      }
+      openOrderModal();
     });
+
+    var orderPageParams = new URLSearchParams(window.location.search);
+    var shouldOpenOrderModal = orderPageParams.get('openOrder') === '1';
+
+    if (shouldOpenOrderModal) {
+      var orderModalAttempts = 0;
+      var orderModalInterval = window.setInterval(function () {
+        orderModalAttempts += 1;
+
+        if (openOrderModal() || orderModalAttempts >= 20) {
+          window.clearInterval(orderModalInterval);
+          if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+          }
+        }
+      }, 400);
+    }
 
     var cateringQuoteForm = document.getElementById('catering-quote-form');
     var cateringFormStatus = document.getElementById('catering-form-status');

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to Order Online | Sagarmatha Momo</title>
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content="3; url=../?openOrder=1" />
+  <style>
+    :root {
+      --saffron: #ea7618;
+      --ember: #bf4a17;
+      --gold: #f1bb57;
+      --snow: #fffdf9;
+      --night: #1d2740;
+      --ridge: #315fb7;
+      --mist: rgba(255, 255, 255, 0.14);
+      --line: rgba(255, 255, 255, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      overflow: hidden;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--snow);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(241, 187, 87, 0.18), transparent 24%),
+        radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.09), transparent 20%),
+        linear-gradient(135deg, rgba(29, 39, 64, 0.98), rgba(49, 95, 183, 0.92) 55%, rgba(234, 118, 24, 0.86));
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    body::before {
+      width: 18rem;
+      height: 18rem;
+      top: -4rem;
+      left: -5rem;
+      background: rgba(241, 187, 87, 0.12);
+    }
+
+    body::after {
+      width: 14rem;
+      height: 14rem;
+      right: -3rem;
+      bottom: -2rem;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .redirect-card {
+      position: relative;
+      width: min(680px, 100%);
+      padding: clamp(1.4rem, 4vw, 2.2rem);
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06)),
+        rgba(12, 18, 31, 0.5);
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 70px rgba(7, 10, 17, 0.3);
+      backdrop-filter: blur(16px);
+      transform: translateY(var(--bounce-offset, 0px));
+      transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.25, 1), box-shadow 0.25s ease;
+      will-change: transform;
+    }
+
+    .redirect-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.1), transparent 24%),
+        radial-gradient(circle at top right, rgba(241, 187, 87, 0.16), transparent 26%);
+      pointer-events: none;
+    }
+
+    .redirect-card.is-bouncing {
+      box-shadow: 0 36px 82px rgba(7, 10, 17, 0.34);
+    }
+
+    .brand-row {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .brand-row img {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .brand-copy strong,
+    h1 {
+      font-family: Baskerville, "Times New Roman", serif;
+    }
+
+    .brand-copy strong {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .brand-copy span {
+      color: rgba(255, 255, 255, 0.76);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .trust-pill {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff4cf;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .trust-pill::before {
+      content: "";
+      width: 0.58rem;
+      height: 0.58rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7ed38b, #b9f2c0);
+      box-shadow: 0 0 0 6px rgba(126, 211, 139, 0.12);
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 1rem 0 0.7rem;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      line-height: 0.96;
+      max-width: 10ch;
+    }
+
+    .lead,
+    .subnote {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .lead {
+      max-width: 56ch;
+      font-size: 1.02rem;
+    }
+
+    .progress-wrap {
+      position: relative;
+      z-index: 1;
+      margin-top: 1.4rem;
+      padding: 1rem 1rem 0.95rem;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .progress-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 0.7rem;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .progress-bar span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--gold), #ffd78a, var(--saffron));
+      transform-origin: left center;
+      animation: countdown 3s linear forwards;
+      box-shadow: 0 0 22px rgba(241, 187, 87, 0.35);
+    }
+
+    .actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .actions .primary {
+      color: var(--night);
+      background: linear-gradient(135deg, var(--gold), #ffda88);
+      box-shadow: 0 16px 32px rgba(241, 187, 87, 0.24);
+    }
+
+    .actions .secondary {
+      color: var(--snow);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .subnote {
+      margin-top: 0.95rem;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    @keyframes countdown {
+      from {
+        transform: scaleX(1);
+      }
+
+      to {
+        transform: scaleX(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+
+      .redirect-card {
+        border-radius: 24px;
+      }
+
+      .brand-row {
+        align-items: flex-start;
+      }
+
+      .brand-row img {
+        width: 72px;
+        height: 72px;
+      }
+
+      .actions a {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="redirect-card">
+    <div class="brand-row">
+      <img src="../assets/products/compressed/sagarmathaMomoLogo-compressed.webp" alt="Sagarmatha Momo logo" />
+      <div class="brand-copy">
+        <strong>Sagarmatha Momo</strong>
+        <span>Nepalese and Indian Kitchen</span>
+      </div>
+    </div>
+
+    <div class="trust-pill">You are leaving our site for secure online ordering</div>
+
+    <h1>Opening Online Ordering</h1>
+    <p class="lead">
+      We are sending you to our official ordering experience so you can place pickup or delivery orders with confidence.
+    </p>
+
+    <div class="progress-wrap" aria-live="polite">
+      <div class="progress-meta">
+        <strong>Redirecting in <span id="countdown">3</span> seconds</strong>
+        <span>Official Sagarmatha Momo handoff</span>
+      </div>
+      <div class="progress-bar" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="primary" href="../?openOrder=1">Continue to Order Now</a>
+      <a class="secondary" href="../">Back to Homepage</a>
+    </div>
+
+    <p class="subnote">
+      If the automatic redirect does not start, use the button above to continue.
+    </p>
+  </main>
+
+  <script>
+    var redirectCard = document.querySelector('.redirect-card');
+    var countdown = document.getElementById('countdown');
+    var secondsRemaining = 3;
+    var bounceResetTimer = null;
+    var touchStartY = null;
+
+    function setBounceOffset(offset) {
+      if (!redirectCard) return;
+
+      redirectCard.classList.add('is-bouncing');
+      redirectCard.style.setProperty('--bounce-offset', offset + 'px');
+
+      if (bounceResetTimer) {
+        window.clearTimeout(bounceResetTimer);
+      }
+
+      bounceResetTimer = window.setTimeout(function () {
+        redirectCard.style.setProperty('--bounce-offset', '0px');
+        redirectCard.classList.remove('is-bouncing');
+      }, 180);
+    }
+
+    function applyBounce(delta) {
+      var limitedOffset = Math.max(-30, Math.min(30, delta * 0.18));
+      if (Math.abs(limitedOffset) < 3) return;
+      setBounceOffset(limitedOffset);
+    }
+
+    var countdownInterval = window.setInterval(function () {
+      secondsRemaining -= 1;
+      if (countdown) countdown.textContent = String(Math.max(secondsRemaining, 0));
+
+      if (secondsRemaining <= 0) {
+        window.clearInterval(countdownInterval);
+      }
+    }, 1000);
+
+    window.addEventListener('wheel', function (event) {
+      event.preventDefault();
+      applyBounce(-event.deltaY);
+    }, { passive: false });
+
+    window.addEventListener('touchstart', function (event) {
+      if (!event.touches.length) return;
+      touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchmove', function (event) {
+      if (!event.touches.length || touchStartY === null) return;
+      event.preventDefault();
+      applyBounce(event.touches[0].clientY - touchStartY);
+    }, { passive: false });
+
+    window.addEventListener('touchend', function () {
+      touchStartY = null;
+      setBounceOffset(0);
+    }, { passive: true });
+
+    window.setTimeout(function () {
+      window.location.replace('../?openOrder=1');
+    }, 3000);
+  </script>
+</body>
+</html>
