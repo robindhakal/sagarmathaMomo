@@ -155,7 +155,7 @@
       scroll-margin-top: 7.5rem;
       background:
         linear-gradient(115deg, rgba(29, 39, 64, 0.92), rgba(49, 95, 183, 0.82) 45%, rgba(234, 118, 24, 0.74)),
-        url("assets/products/SteamedMomo.png") center/cover;
+        url("assets/products/compressed/SteamedMomo-compressed.webp") center/cover;
     }
 
     header::before {
@@ -554,11 +554,18 @@
 
     .catering-card {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
       gap: 1.25rem;
+      align-items: start;
       padding: 1.3rem;
       background:
         linear-gradient(135deg, rgba(29, 39, 64, 0.96), rgba(49, 95, 183, 0.9) 58%, rgba(234, 118, 24, 0.82));
+      color: var(--snow);
+    }
+
+    .catering-heading {
+      grid-column: 1 / -1;
+      margin-bottom: 0;
       color: var(--snow);
     }
 
@@ -572,10 +579,6 @@
       padding: 1.7rem;
       background: rgba(17, 24, 40, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .catering-copy h2 {
-      margin-bottom: 0.75rem;
     }
 
     .catering-copy p {
@@ -637,24 +640,274 @@
       font-size: 0.9rem;
     }
 
-    .catering-actions {
+    .catering-form {
+      margin-top: 1.4rem;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .catering-form:focus-within {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(9, 14, 24, 0.18);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .catering-form.is-submitting {
+      border-color: rgba(255, 218, 136, 0.42);
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .catering-form.is-success {
+      border-color: rgba(126, 211, 142, 0.5);
+      background: rgba(87, 165, 104, 0.14);
+    }
+
+    .catering-form.is-error {
+      border-color: rgba(255, 177, 177, 0.45);
+      background: rgba(180, 64, 64, 0.12);
+    }
+
+    .catering-form h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1.15rem;
+    }
+
+    .catering-form-intro {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .catering-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .catering-field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .catering-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .catering-field label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .catering-field input,
+    .catering-field select,
+    .catering-field textarea {
+      max-width: 100%;
+      width: 100%;
+      min-width: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 0.85rem 0.95rem;
+      font: inherit;
+      color: var(--text);
+      background: rgba(255, 253, 249, 0.98);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .catering-field input[type="date"] {
+      display: block;
+      height: 3.1rem;
+      line-height: 1.2;
+    }
+
+    .catering-field input[type="date"]::-webkit-date-and-time-value {
+      text-align: left;
+    }
+
+    .catering-field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .catering-field input::placeholder,
+    .catering-field textarea::placeholder {
+      color: #857260;
+    }
+
+    .catering-form-actions {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .catering-submit {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      padding: 1.05rem 1.4rem;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      box-shadow: 0 18px 34px rgba(241, 187, 87, 0.24);
+      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .catering-submit:hover,
+    .catering-submit:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(241, 187, 87, 0.3);
+    }
+
+    .catering-submit:disabled {
+      cursor: wait;
+      opacity: 0.9;
+    }
+
+    .catering-secondary-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 1.2rem;
+      gap: 0.75rem;
+    }
+
+    .catering-secondary-actions .cta-secondary,
+    .catering-secondary-actions .cta {
+      flex: 1 1 180px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .catering-secondary-actions .cta {
+      color: var(--snow);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: none;
+    }
+
+    .catering-form-note {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .catering-form-status {
+      margin-top: 0.85rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 0.7rem;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.9);
+      min-height: 0;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+    }
+
+    .catering-form-status.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .catering-form-status-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 1.65rem;
+      height: 1.65rem;
+      border-radius: 50%;
+      font-size: 0.95rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--snow);
+      margin-top: 0.05rem;
+    }
+
+    .catering-form-status-copy strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--snow);
+    }
+
+    .catering-form-status-copy span {
+      display: block;
+      margin-top: 0.18rem;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .catering-form-status.is-sending {
+      border-color: rgba(255, 218, 136, 0.28);
+      background: rgba(241, 187, 87, 0.14);
+    }
+
+    .catering-form-status.is-sending .catering-form-status-icon {
+      animation: cateringPulse 1s ease-in-out infinite;
+      background: rgba(255, 218, 136, 0.2);
+      color: #fff4cf;
+    }
+
+    .catering-form-status.is-success {
+      border-color: rgba(126, 211, 142, 0.3);
+      background: rgba(87, 165, 104, 0.16);
+    }
+
+    .catering-form-status.is-success .catering-form-status-icon {
+      background: rgba(126, 211, 142, 0.2);
+      color: #dff6e2;
+    }
+
+    .catering-form-status.is-error {
+      border-color: rgba(255, 177, 177, 0.26);
+      background: rgba(180, 64, 64, 0.16);
+    }
+
+    .catering-form-status.is-error .catering-form-status-icon {
+      background: rgba(255, 177, 177, 0.18);
+      color: #ffe2e2;
+    }
+
+    @keyframes cateringPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
     }
 
     .catering-image {
-      min-height: 260px;
+      display: grid;
+      align-self: stretch;
+      align-content: start;
+      gap: 0.9rem;
+      padding: 1.1rem;
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 52%),
+        rgba(17, 24, 40, 0.22);
       border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .catering-image-caption {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.9rem;
+      line-height: 1.45;
     }
 
     .catering-image img {
       width: 100%;
-      height: 100%;
-      min-height: 260px;
-      object-fit: cover;
+      height: auto;
+      max-height: min(72vh, 720px);
+      object-fit: contain;
       display: block;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
     }
 
     .visit-copy,
@@ -672,6 +925,12 @@
 
     .visit-copy h2 {
       margin-top: 0;
+    }
+
+    .visit-heading {
+      grid-column: 1 / -1;
+      color: var(--snow);
+      margin-bottom: 0;
     }
 
     .visit-copy p {
@@ -908,6 +1167,10 @@
         padding: 1.3rem;
       }
 
+      .catering-form-grid {
+        grid-template-columns: 1fr;
+      }
+
       .visit-shot {
         grid-template-rows: minmax(240px, 1fr) auto;
       }
@@ -922,7 +1185,7 @@
   <nav>
     <div class="nav-inner">
       <a class="brand" href="#home" id="home-link">
-        <img src="assets/products/sagarmathaMomoLogo.png" alt="Sagarmatha Momo logo" />
+        <img src="assets/products/compressed/sagarmathaMomoLogo-compressed.webp" alt="Sagarmatha Momo logo" />
         <span class="brand-copy">
           <strong>Sagarmatha Momo</strong>
           <span>Nepalese and Indian Kitchen</span>
@@ -940,7 +1203,7 @@
   <header id="home">
     <div class="hero-inner">
       <div class="hero-copy">
-        <img class="hero-mark" src="assets/products/sagarmathaMomoLogo.png" alt="Sagarmatha Momo logo" />
+        <img class="hero-mark" src="assets/products/compressed/sagarmathaMomoLogo-compressed.webp" alt="Sagarmatha Momo logo" />
         <h1>Fresh momos, curries, and comfort food in Pflugerville.</h1>
         <p>
           Welcome to our Kitchen! We are pleased to share with you a little taste from Nepal.
@@ -1042,14 +1305,14 @@
                 </div>
               </li>
               <li class="menu-item-card">
-                <img src="assets/products/SteamedMomo.png" alt="Steamed momo" />
+                <img src="assets/products/compressed/SteamedMomo-compressed.webp" alt="Steamed momo" />
                 <div class="menu-item-copy">
                   <strong>Steamed Momo</strong>
                   <p>Steamed momo warmed to perfection and served with our house dipping sauce.</p>
                 </div>
               </li>
               <li class="menu-item-card">
-                <img src="assets/products/FriedMomo.png" alt="Fried momo" />
+                <img src="assets/products/compressed/FriedMomo-compressed.webp" alt="Fried momo" />
                 <div class="menu-item-copy">
                   <strong>Fried Momo</strong>
                   <p>Fried momo with a golden outer layer and a savory filling that pairs well with our house sauce.</p>
@@ -1336,14 +1599,14 @@
                 </div>
               </li>
               <li class="menu-item-card">
-                <img src="assets/products/Soda.png" alt="Soda" />
+                <img src="assets/products/compressed/Soda-compressed.webp" alt="Soda" />
                 <div class="menu-item-copy">
                   <strong>Soda</strong>
                   <p>Classic bottled soda options to pair with spicy and savory dishes.</p>
                 </div>
               </li>
               <li class="menu-item-card">
-                <img src="assets/products/water.png" alt="Bottled water" />
+                <img src="assets/products/compressed/water-compressed.webp" alt="Bottled water" />
                 <div class="menu-item-copy">
                   <strong>Bottled Water</strong>
                   <p>Simple bottled refreshment for a clean, straightforward beverage option.</p>
@@ -1358,15 +1621,18 @@
 
   <section id="catering">
     <div class="catering-card">
+      <h2 class="section-title catering-heading">Catering for Events</h2>
+      <div class="catering-image">
+        <img src="assets/compressed/Catering-compressed.webp" alt="Sagarmatha Momo catering dishes" />
+        <p class="catering-image-caption">Party trays and event spreads prepared for office lunches, family gatherings, and community celebrations.</p>
+      </div>
       <div class="catering-copy">
-        <h2>Catering for Events</h2>
         <p>
           From family gatherings to office lunches and community celebrations, Sagarmatha Momo brings bold flavor and crowd-pleasing favorites to events of every size.
         </p>
         <p>
           For customized items and pricing, please call us to create a catering order that fits your event.
         </p>
-        <p class="catering-price-note">Options available from $16* per person and above.</p>
         <div class="catering-menu" aria-label="Catering tray menu">
           <div class="catering-menu-header">
             <strong>Catering Menu</strong>
@@ -1399,21 +1665,76 @@
           </ul>
           <p class="catering-menu-note"><strong>And many more ...</strong></p>
         </div>
-        <div class="catering-actions">
-          <a class="cta" href="tel:+15125548941">Call for Catering</a>
-          <a class="cta-secondary" href="#visit">Visit Us</a>
-        </div>
-      </div>
-      <div class="catering-image">
-        <img src="assets/Catering.jpeg" alt="Sagarmatha Momo catering dishes" />
+        <form
+          class="catering-form"
+          id="catering-quote-form"
+          action="https://formspree.io/f/mvzvjapy"
+          method="POST">
+          <h3>Request a Quote</h3>
+          <p class="catering-form-intro">Share a few details and we will receive your quote request directly by email.</p>
+          <input type="hidden" name="_subject" value="Catering Quote Request - Sagarmatha Momo" />
+          <div class="catering-form-grid">
+            <div class="catering-field">
+              <label for="quote-name">Full Name</label>
+              <input id="quote-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-phone">Phone Number</label>
+              <input id="quote-phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-email">Email Address</label>
+              <input id="quote-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-date">Event Date</label>
+              <input id="quote-date" name="event-date" type="date" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-guests">Guest Count</label>
+              <input id="quote-guests" name="guests" type="number" min="1" step="1" placeholder="Approximate guest count" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-type">Event Type</label>
+              <select id="quote-type" name="event-type" required>
+                <option value="">Select one</option>
+                <option>Office Lunch</option>
+                <option>Birthday Party</option>
+                <option>Wedding Event</option>
+                <option>Family Gathering</option>
+                <option>Community Event</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="catering-field catering-field-full">
+              <label for="quote-details">What would you like us to cater?</label>
+              <textarea id="quote-details" name="details" placeholder="Tell us what food you are interested in, pickup or delivery, preferred time, and anything else we should know." required></textarea>
+            </div>
+          </div>
+          <div class="catering-form-actions">
+            <button class="cta catering-submit" type="submit">Send Quote Request</button>
+            <div class="catering-secondary-actions">
+              <a class="cta" href="tel:+15125548941">Call for Catering</a>
+              <a class="cta-secondary" href="#visit">Visit Us</a>
+            </div>
+            <span class="catering-form-note">We will receive this request directly after you submit the form.</span>
+          </div>
+          <div class="catering-form-status" id="catering-form-status" aria-live="polite" role="status">
+            <span class="catering-form-status-icon" id="catering-form-status-icon" aria-hidden="true"></span>
+            <div class="catering-form-status-copy">
+              <strong id="catering-form-status-title"></strong>
+              <span id="catering-form-status-message"></span>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
   <section id="visit">
     <div class="visit-card">
+      <h2 class="section-title visit-heading">Visit Sagarmatha Momo</h2>
       <div class="visit-copy">
-        <h2>Visit Sagarmatha Momo</h2>
         <div class="visit-map">
           <iframe
             title="Sagarmatha Momo map"
@@ -1444,7 +1765,7 @@
         <div class="nearby-note">
           <p>Nearby Attraction</p>
           <div class="nearby-card">
-            <img src="assets/Temple.png" alt="Nepalese Temple Pashupatinath" />
+            <img src="assets/compressed/Temple-compressed.webp" alt="Nepalese Temple Pashupatinath" />
             <a class="visit-link" href="https://maps.app.goo.gl/AzMzoWY6wipX69C17" target="_blank" rel="noopener noreferrer">
               <strong>Nepalese Temple Pashupatinath</strong>
             </a>
@@ -1457,7 +1778,7 @@
       <div class="visit-gallery" aria-label="Interior photos of Sagarmatha Momo">
         <figure class="visit-shot">
           <div class="visit-shot-frame">
-            <img src="assets/DineIn1.jpg" alt="Interior seating area at Sagarmatha Momo with front windows and tables" />
+            <img src="assets/compressed/DineIn1-compressed.webp" alt="Interior seating area at Sagarmatha Momo with front windows and tables" />
           </div>
           <div class="visit-shot-copy">
             <p>Step inside and see the cozy space that welcomes every guest.</p>
@@ -1465,7 +1786,7 @@
         </figure>
         <figure class="visit-shot">
           <div class="visit-shot-frame">
-            <img src="assets/DineIn2.jpg" alt="Additional interior view of Sagarmatha Momo seating area" />
+            <img src="assets/compressed/DineIn2-compressed.webp" alt="Additional interior view of Sagarmatha Momo seating area" />
           </div>
           <div class="visit-shot-copy">
             <p>Get a feel for our welcoming space before you stop by.</p>
@@ -1525,6 +1846,97 @@
 
       if (storefrontTrigger) {
         storefrontTrigger.click();
+      }
+    });
+
+    var cateringQuoteForm = document.getElementById('catering-quote-form');
+    var cateringFormStatus = document.getElementById('catering-form-status');
+    var cateringFormStatusIcon = document.getElementById('catering-form-status-icon');
+    var cateringFormStatusTitle = document.getElementById('catering-form-status-title');
+    var cateringFormStatusMessage = document.getElementById('catering-form-status-message');
+
+    function setCateringFormState(state, title, message) {
+      if (!cateringQuoteForm || !cateringFormStatus) return;
+
+      cateringQuoteForm.classList.remove('is-submitting', 'is-success', 'is-error');
+      cateringFormStatus.classList.remove('is-visible', 'is-sending', 'is-success', 'is-error');
+
+      if (!state) {
+        if (cateringFormStatusTitle) cateringFormStatusTitle.textContent = '';
+        if (cateringFormStatusMessage) cateringFormStatusMessage.textContent = '';
+        if (cateringFormStatusIcon) cateringFormStatusIcon.textContent = '';
+        return;
+      }
+
+      var formStateClass = state === 'sending' ? 'is-submitting' : 'is-' + state;
+      var statusStateClass = state === 'sending' ? 'is-sending' : 'is-' + state;
+      var iconMap = {
+        sending: '...',
+        success: 'OK',
+        error: '!'
+      };
+
+      cateringQuoteForm.classList.add(formStateClass);
+      cateringFormStatus.classList.add('is-visible', statusStateClass);
+
+      if (cateringFormStatusIcon) cateringFormStatusIcon.textContent = iconMap[state] || '';
+      if (cateringFormStatusTitle) cateringFormStatusTitle.textContent = title || '';
+      if (cateringFormStatusMessage) cateringFormStatusMessage.textContent = message || '';
+    }
+
+    cateringQuoteForm?.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      var endpoint = cateringQuoteForm.getAttribute('action') || '';
+      var submitButton = cateringQuoteForm.querySelector('button[type="submit"]');
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      setCateringFormState(
+        'sending',
+        'Sending your request',
+        'We are submitting your catering quote request now.'
+      );
+
+      try {
+        var response = await fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(cateringQuoteForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          cateringQuoteForm.reset();
+          setCateringFormState(
+            'success',
+            'Quote request sent',
+            'Thanks. We received your catering request and will follow up with you soon.'
+          );
+          cateringQuoteForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          return;
+        }
+
+        setCateringFormState(
+          'error',
+          'Request not sent',
+          'We could not send your request right now. Please try again or call us at (512) 554-8941.'
+        );
+      } catch (error) {
+        setCateringFormState(
+          'error',
+          'Request not sent',
+          'We could not send your request right now. Please try again or call us at (512) 554-8941.'
+        );
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Quote Request';
+        }
       }
     });
 
