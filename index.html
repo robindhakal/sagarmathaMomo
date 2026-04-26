@@ -155,7 +155,7 @@
       scroll-margin-top: 7.5rem;
       background:
         linear-gradient(115deg, rgba(29, 39, 64, 0.92), rgba(49, 95, 183, 0.82) 45%, rgba(234, 118, 24, 0.74)),
-        url("assets/products/compressed/SteamedMomo-compressed.webp") center/cover;
+        url("assets/products/Steamed_Momo.jpeg") center/cover;
     }
 
     header::before {
@@ -426,22 +426,12 @@
 
     .menu-group {
       display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
-      gap: 1.25rem;
-      align-items: stretch;
+      gap: 0.4rem;
       padding: 1rem;
       border-radius: 24px;
       background: rgba(255, 255, 255, 0.88);
       border: 1px solid rgba(49, 95, 183, 0.08);
       scroll-margin-top: 8.5rem;
-    }
-
-    .menu-group-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 220px;
-      object-fit: cover;
-      border-radius: 18px;
     }
 
     .menu-group-header {
@@ -453,7 +443,7 @@
     }
 
     .menu-group-header h3 {
-      font-size: 1.8rem;
+      font-size: 2.15rem;
       color: var(--night);
     }
 
@@ -479,32 +469,39 @@
 
     .menu-item-card {
       display: grid;
-      grid-template-columns: 88px minmax(0, 1fr);
-      gap: 0.85rem;
-      align-items: start;
-      padding: 0.8rem;
-      border-radius: 18px;
+      grid-template-columns: 1fr;
+      gap: 0;
+      align-items: stretch;
+      padding: 0;
+      border-radius: 20px;
       background: var(--snow);
       border: 1px solid rgba(36, 31, 25, 0.06);
+      overflow: hidden;
     }
 
     .menu-item-card img {
-      width: 88px;
-      height: 88px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      min-height: 210px;
       object-fit: cover;
-      border-radius: 14px;
       background: var(--mist);
+      display: block;
+    }
+
+    .menu-item-copy {
+      padding: 0.95rem 1rem 1rem;
     }
 
     .menu-item-copy strong {
       display: block;
       color: var(--night);
-      margin-bottom: 0.25rem;
-      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
     }
 
     .menu-item-copy p {
-      margin-bottom: 0.55rem;
+      margin-bottom: 0;
       color: var(--muted);
       font-size: 0.92rem;
       line-height: 1.45;
@@ -1137,6 +1134,10 @@
       .menu-items {
         grid-template-columns: 1fr;
       }
+
+      .menu-item-card img {
+        min-height: 240px;
+      }
     }
 
     @media (max-width: 720px) {
@@ -1178,6 +1179,7 @@
       .visit-shot-frame {
         min-height: 240px;
       }
+
     }
   </style>
 </head>
@@ -1240,7 +1242,7 @@
           </article>
 
           <article class="hero-slide">
-            <img src="assets/products/Bhaktapur_Jhol_Momo.jpeg" alt="Bhaktapur jhol momo dish" />
+            <img src="assets/products/Bhaktaput_Jhol_Momo.jpg" alt="Bhaktapur jhol momo dish" />
             <div class="hero-panel-copy">
               <strong>Bhaktapur Jhol Momo</strong>
               <p>Steamed momo served with a chilled, tangy jhol made with soybeans, spices, and a deep savory finish.</p>
@@ -1288,15 +1290,11 @@
 
       <div class="menu-groups">
         <article class="menu-group" id="momos">
-          <div class="menu-group-image">
-            <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo platter" />
+          <div class="menu-group-header">
+            <h3>Momos</h3>
           </div>
-          <div>
-            <div class="menu-group-header">
-              <h3>Momos</h3>
-            </div>
-            <p>A variety of choices, from our steamed to our bhaktapur jhol, come in your preferred spice level.</p>
-            <ul class="menu-items">
+          <p>A variety of choices, from our steamed to our bhaktapur jhol, come in your preferred spice level.</p>
+          <ul class="menu-items">
               <li class="menu-item-card">
                 <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo" />
                 <div class="menu-item-copy">
@@ -1305,24 +1303,31 @@
                 </div>
               </li>
               <li class="menu-item-card">
-                <img src="assets/products/compressed/SteamedMomo-compressed.webp" alt="Steamed momo" />
+                <img src="assets/products/Steamed_Momo.jpeg" alt="Steamed momo" />
                 <div class="menu-item-copy">
                   <strong>Steamed Momo</strong>
                   <p>Steamed momo warmed to perfection and served with our house dipping sauce.</p>
                 </div>
               </li>
               <li class="menu-item-card">
-                <img src="assets/products/compressed/FriedMomo-compressed.webp" alt="Fried momo" />
+                <img src="assets/products/Fried_Momo.jpg" alt="Fried momo" />
                 <div class="menu-item-copy">
                   <strong>Fried Momo</strong>
                   <p>Fried momo with a golden outer layer and a savory filling that pairs well with our house sauce.</p>
                 </div>
               </li>
               <li class="menu-item-card">
-                <img src="assets/products/Bhaktapur_Jhol_Momo.jpeg" alt="Bhaktapur jhol momo" />
+                <img src="assets/products/Bhaktaput_Jhol_Momo.jpg" alt="Bhaktapur jhol momo" />
                 <div class="menu-item-copy">
                   <strong>Bhaktapur Jhol Momo</strong>
                   <p>Steamed momo served in a cold jhol soup made with soyabean and spices, giving it a chilled, tangy flavor.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Crispy_Saucy_Momo.jpg" alt="Crispy saucy momo" />
+                <div class="menu-item-copy">
+                  <strong>Crispy Saucy Momo</strong>
+                  <p>Crispy fried momo glazed with our house tomato-based sweet and flavorful sauce, available mild, medium, or spicy.</p>
                 </div>
               </li>
               <li class="menu-item-card">
@@ -1339,20 +1344,15 @@
                   <p>Fried momo sauteed with onions, peppers, and house chili sauce for a bold and flavorful finish.</p>
                 </div>
               </li>
-            </ul>
-          </div>
+          </ul>
         </article>
 
         <article class="menu-group" id="curries">
-          <div class="menu-group-image">
-            <img src="assets/products/ChickenShahiKorma.jpeg" alt="Chicken shahi korma" />
+          <div class="menu-group-header">
+            <h3>Curry</h3>
           </div>
-          <div>
-            <div class="menu-group-header">
-              <h3>Curry</h3>
-            </div>
-            <p>Our curries were especially selected to provide both chicken and vegetable options. <strong>All curries are served with rice.</strong></p>
-            <ul class="menu-items">
+          <p>Our curries were especially selected to provide both chicken and vegetable options. <strong>All curries are served with rice.</strong></p>
+          <ul class="menu-items">
               <li class="menu-item-card">
                 <img src="assets/products/ChickenCurry.jpeg" alt="Chicken curry" />
                 <div class="menu-item-copy">
@@ -1399,20 +1399,15 @@
                   </div>
                 </div>
               </li>
-            </ul>
-          </div>
+          </ul>
         </article>
 
         <article class="menu-group" id="rice-noodles">
-          <div class="menu-group-image">
-            <img src="assets/products/Biryani.jpg" alt="Chicken biryani" />
+          <div class="menu-group-header">
+            <h3>Rice and Noodles</h3>
           </div>
-          <div>
-            <div class="menu-group-header">
-              <h3>Rice and Noodles</h3>
-            </div>
-            <p>Simple dishes with a lot of flavor are words to explain how rich in seasoniing our rice and even noodles compare. Too good to share!</p>
-            <ul class="menu-items">
+          <p>Simple dishes with a lot of flavor are words to explain how rich in seasoniing our rice and even noodles compare. Too good to share!</p>
+          <ul class="menu-items">
               <li class="menu-item-card">
                 <img src="assets/products/Biryani.jpg" alt="Chicken biryani" />
                 <div class="menu-item-copy">
@@ -1437,20 +1432,15 @@
                   <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
                 </div>
               </li>
-            </ul>
-          </div>
+          </ul>
         </article>
 
         <article class="menu-group" id="snacks">
-          <div class="menu-group-image">
-            <img src="assets/products/Samosas.jpeg" alt="Samosas" />
+          <div class="menu-group-header">
+            <h3>Snacks</h3>
           </div>
-          <div>
-            <div class="menu-group-header">
-              <h3>Snacks</h3>
-            </div>
-            <p>A burst full of flavor with every bite, these appetizer sized portions deliver some of the lightest options.</p>
-            <ul class="menu-items">
+          <p>A burst full of flavor with every bite, these appetizer sized portions deliver some of the lightest options.</p>
+          <ul class="menu-items">
               <li class="menu-item-card">
                 <img src="assets/products/Samosas.jpeg" alt="Samosas" />
                 <div class="menu-item-copy">
@@ -1491,22 +1481,17 @@
                   </div>
                 </div>
               </li>
-            </ul>
-          </div>
+          </ul>
         </article>
       </div>
 
       <div class="menu-groups">
         <article class="menu-group" id="dessert">
-          <div class="menu-group-image">
-            <img src="assets/products/Rasmalai.jpeg" alt="Sagarmatha Momo dessert section" />
+          <div class="menu-group-header">
+            <h3>Dessert</h3>
           </div>
-          <div>
-            <div class="menu-group-header">
-              <h3>Dessert</h3>
-            </div>
-            <p>In for a sweet treat, light and tasty, our desserts come from those traditionally served.</p>
-            <ul class="menu-items">
+          <p>In for a sweet treat, light and tasty, our desserts come from those traditionally served.</p>
+          <ul class="menu-items">
               <li class="menu-item-card">
                 <img src="assets/products/Kheer.jpeg" alt="Kheer" />
                 <div class="menu-item-copy">
@@ -1528,20 +1513,15 @@
                   <p>Soft cheese patties served in sweetened milk for a smooth, delicate dessert.</p>
                 </div>
               </li>
-            </ul>
-          </div>
+          </ul>
         </article>
 
         <article class="menu-group" id="sides">
-          <div class="menu-group-image">
-            <img src="assets/products/SpecialParatha.jpeg" alt="Sagarmatha Momo sides section" />
+          <div class="menu-group-header">
+            <h3>Sides</h3>
           </div>
-          <div>
-            <div class="menu-group-header">
-              <h3>Sides</h3>
-            </div>
-            <p>The add-ons keep coming with some of our easiest pairings. Our radish pickle is availble in large sizes as well.</p>
-            <ul class="menu-items">
+          <p>The add-ons keep coming with some of our easiest pairings. Our radish pickle is availble in large sizes as well.</p>
+          <ul class="menu-items">
               <li class="menu-item-card">
                 <img src="assets/products/SpecialParatha.jpeg" alt="Special paratha" />
                 <div class="menu-item-copy">
@@ -1577,20 +1557,15 @@
                   <p>Cooling yogurt accompaniment that balances spicier dishes and heavier curries.</p>
                 </div>
               </li>
-            </ul>
-          </div>
+          </ul>
         </article>
 
         <article class="menu-group" id="drinks">
-          <div class="menu-group-image">
-            <img src="assets/products/MangoLassi.jpeg" alt="Sagarmatha Momo drinks section" />
+          <div class="menu-group-header">
+            <h3>Drinks</h3>
           </div>
-          <div>
-            <div class="menu-group-header">
-              <h3>Drinks</h3>
-            </div>
-            <p>To help calm the savory tastes, we offer an in-house made mango lassi. Try today!</p>
-            <ul class="menu-items">
+          <p>To help calm the savory tastes, we offer an in-house made mango lassi. Try today!</p>
+          <ul class="menu-items">
               <li class="menu-item-card">
                 <img src="assets/products/MangoLassi.jpeg" alt="Mango lassi" />
                 <div class="menu-item-copy">
@@ -1612,8 +1587,7 @@
                   <p>Simple bottled refreshment for a clean, straightforward beverage option.</p>
                 </div>
               </li>
-            </ul>
-          </div>
+          </ul>
         </article>
       </div>
     </div>
@@ -1672,7 +1646,8 @@
           method="POST">
           <h3>Request a Quote</h3>
           <p class="catering-form-intro">Share a few details and we will receive your quote request directly by email.</p>
-          <input type="hidden" name="_subject" value="Catering Quote Request - Sagarmatha Momo" />
+          <input type="hidden" name="_subject" value="New Catering Quote Request - Sagarmatha Momo" />
+          <input type="hidden" name="form_name" value="Catering Quote Request" />
           <div class="catering-form-grid">
             <div class="catering-field">
               <label for="quote-name">Full Name</label>
@@ -1939,7 +1914,7 @@
           setCateringFormState(
             'success',
             'Quote request sent',
-            'Thanks. We received your catering request and will follow up with you soon.'
+            'Thank you! We received your catering quote request and sent a confirmation email.'
           );
           cateringQuoteForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           return;
@@ -1948,13 +1923,13 @@
         setCateringFormState(
           'error',
           'Request not sent',
-          'We could not send your request right now. Please try again or call us at (512) 554-8941.'
+          'Something went wrong. Please call us directly for catering.'
         );
       } catch (error) {
         setCateringFormState(
           'error',
           'Request not sent',
-          'We could not send your request right now. Please try again or call us at (512) 554-8941.'
+          'Something went wrong. Please call us directly for catering.'
         );
       } finally {
         if (submitButton) {
