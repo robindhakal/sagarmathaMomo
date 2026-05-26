@@ -141,11 +141,27 @@
     }
 
     .nav-links .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
       padding: 0.75rem 1.2rem;
       border-radius: 999px;
       color: var(--snow);
       background: linear-gradient(135deg, var(--ember), var(--saffron));
       box-shadow: 0 12px 24px rgba(191, 74, 23, 0.2);
+    }
+
+    .nav-cta-offer {
+      padding: 0.18rem 0.46rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      color: rgba(255, 253, 249, 0.96);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     header {
@@ -200,12 +216,96 @@
       margin-bottom: 1.5rem;
     }
 
+    .hero-promo {
+      display: grid;
+      gap: 0.5rem;
+      max-width: 590px;
+      margin-bottom: 1.4rem;
+      padding: 1rem 1.1rem;
+      border-radius: 22px;
+      background: rgba(255, 248, 239, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-promo-kicker {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #ffda88);
+      color: var(--night);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-promo strong {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.05;
+    }
+
+    .hero-promo p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .storefront-offer-banner {
+      display: grid;
+      gap: 0.4rem;
+      margin: 1rem auto 0.85rem;
+      padding: 0.95rem 1rem;
+      max-width: min(88%, 420px);
+      border-radius: 22px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 244, 207, 0.98), rgba(255, 230, 175, 0.96));
+      border: 1px solid rgba(191, 74, 23, 0.14);
+      box-shadow: 0 14px 26px rgba(29, 39, 64, 0.12);
+    }
+
+    .storefront-offer-banner-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0.35rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(191, 74, 23, 0.1);
+      color: var(--ember);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .storefront-offer-banner strong {
+      color: var(--night);
+      font-size: 1.2rem;
+      line-height: 1.1;
+    }
+
+    .storefront-offer-banner p {
+      margin: 0;
+      color: #5d4a38;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
     .hero-actions,
     .hero-badges,
     .visit-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.85rem;
+    }
+
+    .hero-actions {
+      margin-bottom: 1.35rem;
     }
 
     .cta,
@@ -417,6 +517,20 @@
       justify-content: center;
       gap: 0.45rem;
       margin-bottom: 1.4rem;
+    }
+
+    .menu-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .menu-download {
+      color: var(--snow);
+      background: linear-gradient(135deg, var(--ridge), var(--night));
+      box-shadow: 0 14px 28px rgba(49, 95, 183, 0.18);
     }
 
     .menu-groups {
@@ -1197,7 +1311,10 @@
         <a href="#menu">Menu</a>
         <a href="#catering">Catering</a>
         <a href="#visit">Visit</a>
-        <a class="nav-cta" href="#order" id="order-online-button">Order Online</a>
+        <a class="nav-cta order-trigger-button" href="#order" id="order-online-button">
+          <span>Order Online</span>
+          <span class="nav-cta-offer">20% Off</span>
+        </a>
       </div>
     </div>
   </nav>
@@ -1211,6 +1328,15 @@
           Welcome to our Kitchen! We are pleased to share with you a little taste from Nepal.
           Come join us and try our delectable momo!
         </p>
+        <div class="hero-promo" id="promo">
+          <span class="hero-promo-kicker">Limited-Time Offer</span>
+          <strong>Grand Opening 20% Off</strong>
+          <p>Celebrate with us and enjoy 20% off your order for a limited time when you order online.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="cta order-trigger-button" href="#order" id="promo-order-button">Claim 20% Off Online</a>
+          <a class="cta-secondary" href="#menu">Browse the Menu</a>
+        </div>
         <div class="hero-badges">
           <span class="badge">Family-Owned</span>
           <span class="badge">Pickup & Delivery</span>
@@ -1286,6 +1412,9 @@
         <span class="tag vegan">Vegan</span>
         <span class="tag vegetarian">Vegetarian</span>
         <span class="tag gf">Gluten Free</span>
+      </div>
+      <div class="menu-actions">
+        <a class="cta menu-download" href="assets/menu/Sagarmatha_Momo_Menu6.pdf" target="_blank" rel="noopener">View PDF Menu</a>
       </div>
 
       <div class="menu-groups">
@@ -1783,7 +1912,7 @@
     function findStorefrontTrigger() {
       var candidates = Array.from(document.querySelectorAll('button, a'));
       return candidates.find(function (element) {
-        return element.id !== 'order-online-button' &&
+        return !element.classList.contains('order-trigger-button') &&
           element.textContent &&
           element.textContent.trim() === triggerText;
       }) || null;
@@ -1813,10 +1942,71 @@
       return false;
     }
 
+    function normalizeText(value) {
+      return (value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function findTextElement(selectors, expectedText, root) {
+      var scope = root || document;
+      return Array.from(scope.querySelectorAll(selectors)).find(function (element) {
+        return normalizeText(element.textContent) === expectedText;
+      }) || null;
+    }
+
+    function findCommonAncestor(elements) {
+      if (!elements.length) return null;
+
+      var ancestor = elements[0];
+      while (ancestor && ancestor !== document.body) {
+        var containsAll = elements.every(function (element) {
+          return ancestor.contains(element);
+        });
+
+        if (containsAll) {
+          return ancestor;
+        }
+
+        ancestor = ancestor.parentElement;
+      }
+
+      return null;
+    }
+
+    function findStorefrontModal() {
+      var deliveryButton = findTextElement('button, a, [role="button"]', 'Order Delivery');
+      var pickupButton = findTextElement('button, a, [role="button"]', 'Order Pickup');
+      var heading = findTextElement('h1, h2, h3, strong, div, span, p', 'Order Now');
+
+      if (!deliveryButton || !pickupButton || !heading) return null;
+
+      return deliveryButton.closest('[role="dialog"], [aria-modal="true"]') ||
+        heading.closest('[role="dialog"], [aria-modal="true"]') ||
+        findCommonAncestor([deliveryButton, pickupButton, heading]);
+    }
+
+    function decorateStorefrontModal() {
+      var modal = findStorefrontModal();
+      if (!modal || modal.querySelector('.storefront-offer-banner')) return;
+
+      var heading = findTextElement('h1, h2, h3, strong, div, span, p', 'Order Now', modal);
+      if (!heading || !heading.parentElement) return;
+
+      var offerBanner = document.createElement('div');
+      offerBanner.className = 'storefront-offer-banner';
+      offerBanner.innerHTML =
+        '<span class="storefront-offer-banner-kicker">Limited-Time Offer</span>' +
+        '<strong>Get 20% Off Your Order</strong>' +
+        '<p>Celebrate our grand opening and enjoy 20% off when you order online.</p>';
+
+      heading.insertAdjacentElement('afterend', offerBanner);
+    }
+
     var storefrontObserver = new MutationObserver(function () {
       if (!storefrontTrigger) {
         cacheAndHideStorefrontTrigger();
       }
+
+      decorateStorefrontModal();
     });
 
     storefrontObserver.observe(document.body, { childList: true, subtree: true });
@@ -1826,9 +2016,13 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    document.getElementById('order-online-button')?.addEventListener('click', function (event) {
-      event.preventDefault();
-      openOrderModal();
+    document.querySelectorAll('.order-trigger-button').forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        openOrderModal();
+        window.setTimeout(decorateStorefrontModal, 150);
+        window.setTimeout(decorateStorefrontModal, 500);
+      });
     });
 
     var orderPageParams = new URLSearchParams(window.location.search);
