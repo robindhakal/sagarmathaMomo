@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../../" />
+  <title>Sagarmatha Momo</title>
+  <meta name="description" content="Sagarmatha Momo serves handcrafted momos, curries, rice dishes, snacks, desserts, and drinks in Pflugerville." />
+  <meta property="og:title" content="Sagarmatha Momo" />
+  <meta property="og:description" content="Handcrafted momos, curries, rice dishes, snacks, desserts, and drinks in Pflugerville." />
+  <meta property="og:image" content="https://sagarmathamomo.com/assets/products/SadhekoMomo.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sagarmatha Momo" />
+  <meta name="twitter:description" content="Handcrafted momos, curries, rice dishes, snacks, desserts, and drinks in Pflugerville." />
+  <meta name="twitter:image" content="https://sagarmathamomo.com/assets/products/SadhekoMomo.jpeg" />
+  <style>
+    :root {
+      --saffron: #ea7618;
+      --ember: #bf4a17;
+      --gold: #f1bb57;
+      --cream: #fff8ef;
+      --snow: #fffdf9;
+      --mist: #f4ecdf;
+      --ridge: #315fb7;
+      --night: #1d2740;
+      --text: #2f261d;
+      --muted: #6c5c4a;
+      --line: rgba(36, 31, 25, 0.08);
+      --shadow: 0 18px 50px rgba(27, 22, 17, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(241, 187, 87, 0.2), transparent 22%),
+        linear-gradient(180deg, #fff5e4 0%, var(--cream) 30%, #fffaf3 100%);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-inner,
+    .hero-inner,
+    section,
+    footer {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 248, 239, 0.9);
+      border-bottom: 1px solid rgba(191, 74, 23, 0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand img {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: transparent;
+      box-shadow: 0 14px 30px rgba(191, 74, 23, 0.24);
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .brand-copy strong,
+    .hero-copy h1,
+    .section-title,
+    .menu-group-header h3,
+    .visit-card h2 {
+      font-family: Baskerville, "Times New Roman", serif;
+    }
+
+    .brand-copy strong {
+      color: var(--ember);
+      font-size: 1.9rem;
+    }
+
+    .brand-copy span {
+      font-size: 1rem;
+      color: #836846;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 700;
+      color: var(--night);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ember);
+    }
+
+    .nav-links .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      color: var(--snow);
+      background: linear-gradient(135deg, var(--ember), var(--saffron));
+      box-shadow: 0 12px 24px rgba(191, 74, 23, 0.2);
+    }
+
+    .nav-cta-offer {
+      padding: 0.18rem 0.46rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      color: rgba(255, 253, 249, 0.96);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: var(--snow);
+      scroll-margin-top: 7.5rem;
+      background:
+        linear-gradient(115deg, rgba(29, 39, 64, 0.92), rgba(49, 95, 183, 0.82) 45%, rgba(234, 118, 24, 0.74)),
+        url("assets/products/Steamed_Momo.jpeg") center/cover;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.18), transparent 18%),
+        radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.1), transparent 16%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 5rem 0;
+    }
+
+    .hero-mark {
+      width: clamp(150px, 22vw, 240px);
+      border-radius: 50%;
+      object-fit: cover;
+      background: transparent;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.24));
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(3rem, 7vw, 5.3rem);
+      line-height: 0.95;
+      margin-bottom: 1rem;
+      text-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-copy p {
+      max-width: 640px;
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-promo {
+      display: grid;
+      gap: 0.5rem;
+      max-width: 590px;
+      margin-bottom: 1.4rem;
+      padding: 1rem 1.1rem;
+      border-radius: 22px;
+      background: rgba(255, 248, 239, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-promo-kicker {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #ffda88);
+      color: var(--night);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-promo strong {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.05;
+    }
+
+    .hero-promo p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .storefront-offer-banner {
+      display: grid;
+      gap: 0.4rem;
+      margin: 1rem auto 0.85rem;
+      padding: 0.95rem 1rem;
+      max-width: min(88%, 420px);
+      border-radius: 22px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 244, 207, 0.98), rgba(255, 230, 175, 0.96));
+      border: 1px solid rgba(191, 74, 23, 0.14);
+      box-shadow: 0 14px 26px rgba(29, 39, 64, 0.12);
+    }
+
+    .storefront-offer-banner-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0.35rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(191, 74, 23, 0.1);
+      color: var(--ember);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .storefront-offer-banner strong {
+      color: var(--night);
+      font-size: 1.2rem;
+      line-height: 1.1;
+    }
+
+    .storefront-offer-banner p {
+      margin: 0;
+      color: #5d4a38;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .hero-actions,
+    .hero-badges,
+    .visit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .hero-actions {
+      margin-bottom: 1.35rem;
+    }
+
+    .cta,
+    .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.92rem 1.35rem;
+      font-weight: 800;
+    }
+
+    .cta {
+      color: var(--night);
+      background: linear-gradient(135deg, var(--gold), #ffda88);
+      box-shadow: 0 14px 30px rgba(241, 187, 87, 0.28);
+    }
+
+    .cta-secondary {
+      color: var(--snow);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 0.65rem 0.95rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 0.92rem;
+    }
+
+    .hero-panel {
+      position: relative;
+      border-radius: 30px;
+      background: rgba(255, 249, 239, 0.94);
+      color: var(--night);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-slider {
+      position: relative;
+      min-height: 100%;
+    }
+
+    .hero-slider-controls {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 1.25rem 1.2rem;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      opacity: 0;
+      transform: translateX(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      pointer-events: none;
+    }
+
+    .hero-slide.is-active {
+      position: relative;
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .hero-panel img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    .hero-panel-copy {
+      padding: 1.25rem;
+    }
+
+    .hero-panel-copy strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-panel-copy p {
+      color: var(--muted);
+    }
+
+    .hero-slide-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(36, 31, 25, 0.08);
+    }
+
+    .hero-slide-timer {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ember);
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 0.55rem;
+    }
+
+    .hero-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(49, 95, 183, 0.18);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .hero-dot.is-active {
+      background: linear-gradient(135deg, var(--ember), var(--saffron));
+      transform: scale(1.12);
+    }
+
+    section {
+      padding: 4.2rem 0;
+      scroll-margin-top: 7.5rem;
+    }
+
+    .section-header {
+      display: grid;
+      gap: 0.75rem;
+      justify-items: center;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ember);
+      font-weight: 800;
+    }
+
+    .section-title {
+      font-size: clamp(2.1rem, 4vw, 3.25rem);
+      color: var(--night);
+    }
+
+    .menu-title {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .menu-frame,
+    .catering-card,
+    .visit-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .menu-frame {
+      padding: 1.6rem;
+      background:
+        linear-gradient(180deg, rgba(244, 236, 223, 0.58), rgba(255, 255, 255, 0.84)),
+        rgba(255, 255, 255, 0.84);
+    }
+
+    .menu-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+      justify-content: center;
+    }
+
+    .menu-categories a {
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: rgba(49, 95, 183, 0.08);
+      color: var(--ridge);
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+    }
+
+    .menu-categories a:hover,
+    .menu-categories a:focus-visible {
+      background: linear-gradient(135deg, var(--ember), var(--saffron));
+      color: var(--snow);
+    }
+
+    .menu-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .menu-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .menu-download {
+      color: var(--snow);
+      background: linear-gradient(135deg, var(--ridge), var(--night));
+      box-shadow: 0 14px 28px rgba(49, 95, 183, 0.18);
+    }
+
+    .menu-groups {
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    .menu-group {
+      display: grid;
+      gap: 0.4rem;
+      padding: 1rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(49, 95, 183, 0.08);
+      scroll-margin-top: 8.5rem;
+    }
+
+    .menu-group-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+    }
+
+    .menu-group-header h3 {
+      font-size: 2.15rem;
+      color: var(--night);
+    }
+
+    .menu-group-header span {
+      color: var(--ember);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+    }
+
+    .menu-group p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem 1rem;
+      list-style: none;
+    }
+
+    .menu-item-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      align-items: stretch;
+      padding: 0;
+      border-radius: 20px;
+      background: var(--snow);
+      border: 1px solid rgba(36, 31, 25, 0.06);
+      overflow: hidden;
+    }
+
+    .menu-item-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      min-height: 210px;
+      object-fit: cover;
+      background: var(--mist);
+      display: block;
+    }
+
+    .menu-item-copy {
+      padding: 0.95rem 1rem 1rem;
+    }
+
+    .menu-item-copy strong {
+      display: block;
+      color: var(--night);
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .menu-item-copy p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .menu-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.28rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .tag.vegan {
+      background: rgba(72, 142, 81, 0.12);
+      color: #356d3e;
+    }
+
+    .tag.vegetarian {
+      background: rgba(241, 187, 87, 0.18);
+      color: #8f5e03;
+    }
+
+    .tag.gf {
+      background: rgba(49, 95, 183, 0.12);
+      color: #224d9d;
+    }
+
+    .visit-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(280px, 0.98fr);
+      gap: 1.2rem;
+      padding: 1.2rem;
+      background:
+        linear-gradient(135deg, rgba(29, 39, 64, 0.97), rgba(49, 95, 183, 0.92) 55%, rgba(234, 118, 24, 0.85));
+      color: var(--snow);
+    }
+
+    .catering-card {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
+      gap: 1.25rem;
+      align-items: start;
+      padding: 1.3rem;
+      background:
+        linear-gradient(135deg, rgba(29, 39, 64, 0.96), rgba(49, 95, 183, 0.9) 58%, rgba(234, 118, 24, 0.82));
+      color: var(--snow);
+    }
+
+    .catering-heading {
+      grid-column: 1 / -1;
+      margin-bottom: 0;
+      color: var(--snow);
+    }
+
+    .catering-copy,
+    .catering-image {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .catering-copy {
+      padding: 1.7rem;
+      background: rgba(17, 24, 40, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .catering-copy p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 640px;
+    }
+
+    .catering-price-note {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.25rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(241, 187, 87, 0.18);
+      border: 1px solid rgba(255, 218, 136, 0.3);
+      color: #fff4cf;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .catering-menu {
+      margin-top: 1.3rem;
+      padding: 0.85rem 0.95rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .catering-menu-header {
+      padding-bottom: 0.55rem;
+      margin-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .catering-menu-header strong,
+    .catering-menu-item strong {
+      color: var(--snow);
+    }
+
+    .catering-menu-list {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .catering-menu-item {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.94rem;
+      line-height: 1.4;
+    }
+
+    .catering-menu-item strong {
+      font-size: 0.96rem;
+    }
+
+    .catering-menu-note {
+      margin-top: 0.75rem;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.9rem;
+    }
+
+    .catering-form {
+      margin-top: 1.4rem;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .catering-form:focus-within {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(9, 14, 24, 0.18);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .catering-form.is-submitting {
+      border-color: rgba(255, 218, 136, 0.42);
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .catering-form.is-success {
+      border-color: rgba(126, 211, 142, 0.5);
+      background: rgba(87, 165, 104, 0.14);
+    }
+
+    .catering-form.is-error {
+      border-color: rgba(255, 177, 177, 0.45);
+      background: rgba(180, 64, 64, 0.12);
+    }
+
+    .catering-form h3 {
+      margin-bottom: 0.35rem;
+      font-size: 1.15rem;
+    }
+
+    .catering-form-intro {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .catering-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .catering-field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .catering-field-full {
+      grid-column: 1 / -1;
+    }
+
+    .catering-field label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .catering-field input,
+    .catering-field select,
+    .catering-field textarea {
+      max-width: 100%;
+      width: 100%;
+      min-width: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 0.85rem 0.95rem;
+      font: inherit;
+      color: var(--text);
+      background: rgba(255, 253, 249, 0.98);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .catering-field input[type="date"] {
+      display: block;
+      height: 3.1rem;
+      line-height: 1.2;
+    }
+
+    .catering-field input[type="date"]::-webkit-date-and-time-value {
+      text-align: left;
+    }
+
+    .catering-field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .catering-field input::placeholder,
+    .catering-field textarea::placeholder {
+      color: #857260;
+    }
+
+    .catering-form-actions {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .catering-submit {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      padding: 1.05rem 1.4rem;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      box-shadow: 0 18px 34px rgba(241, 187, 87, 0.24);
+      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .catering-submit:hover,
+    .catering-submit:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px rgba(241, 187, 87, 0.3);
+    }
+
+    .catering-submit:disabled {
+      cursor: wait;
+      opacity: 0.9;
+    }
+
+    .catering-secondary-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .catering-secondary-actions .cta-secondary,
+    .catering-secondary-actions .cta {
+      flex: 1 1 180px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .catering-secondary-actions .cta {
+      color: var(--snow);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: none;
+    }
+
+    .catering-form-note {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .catering-form-status {
+      margin-top: 0.85rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 0.7rem;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.9);
+      min-height: 0;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+    }
+
+    .catering-form-status.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .catering-form-status-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 1.65rem;
+      height: 1.65rem;
+      border-radius: 50%;
+      font-size: 0.95rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--snow);
+      margin-top: 0.05rem;
+    }
+
+    .catering-form-status-copy strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--snow);
+    }
+
+    .catering-form-status-copy span {
+      display: block;
+      margin-top: 0.18rem;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .catering-form-status.is-sending {
+      border-color: rgba(255, 218, 136, 0.28);
+      background: rgba(241, 187, 87, 0.14);
+    }
+
+    .catering-form-status.is-sending .catering-form-status-icon {
+      animation: cateringPulse 1s ease-in-out infinite;
+      background: rgba(255, 218, 136, 0.2);
+      color: #fff4cf;
+    }
+
+    .catering-form-status.is-success {
+      border-color: rgba(126, 211, 142, 0.3);
+      background: rgba(87, 165, 104, 0.16);
+    }
+
+    .catering-form-status.is-success .catering-form-status-icon {
+      background: rgba(126, 211, 142, 0.2);
+      color: #dff6e2;
+    }
+
+    .catering-form-status.is-error {
+      border-color: rgba(255, 177, 177, 0.26);
+      background: rgba(180, 64, 64, 0.16);
+    }
+
+    .catering-form-status.is-error .catering-form-status-icon {
+      background: rgba(255, 177, 177, 0.18);
+      color: #ffe2e2;
+    }
+
+    @keyframes cateringPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .catering-image {
+      display: grid;
+      align-self: stretch;
+      align-content: start;
+      gap: 0.9rem;
+      padding: 1.1rem;
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 52%),
+        rgba(17, 24, 40, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .catering-image-caption {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .catering-image img {
+      width: 100%;
+      height: auto;
+      max-height: min(72vh, 720px);
+      object-fit: contain;
+      display: block;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .visit-copy,
+    .visit-map,
+    .visit-gallery {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .visit-copy {
+      padding: 1.8rem;
+      background: rgba(17, 24, 40, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .visit-copy h2 {
+      margin-top: 0;
+    }
+
+    .visit-heading {
+      grid-column: 1 / -1;
+      color: var(--snow);
+      margin-bottom: 0;
+    }
+
+    .visit-copy p {
+      color: rgba(255, 255, 255, 0.88);
+      margin-top: 0.45rem;
+    }
+
+    .visit-details {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.3rem;
+    }
+
+    .nearby-note {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .nearby-note p {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nearby-card {
+      display: grid;
+      grid-template-columns: 84px minmax(0, 1fr);
+      gap: 0.85rem;
+      align-items: center;
+      margin-top: 0.4rem;
+      padding: 0.7rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nearby-card img {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .visit-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--snow);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .map-options {
+      margin-top: 1.2rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.9rem 1rem;
+    }
+
+    .map-options summary {
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    .map-options summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .map-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.9rem;
+    }
+
+    .map-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--snow);
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .map-options.map-options-cta {
+      margin-top: 1.2rem;
+      padding: 0;
+      background: transparent;
+      border: 0;
+    }
+
+    .map-options.map-options-cta summary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.92rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--night);
+      background: linear-gradient(135deg, var(--gold), #ffda88);
+      box-shadow: 0 14px 30px rgba(241, 187, 87, 0.28);
+    }
+
+    .map-options.map-options-cta .map-links {
+      margin-top: 1rem;
+    }
+
+    .visit-actions {
+      margin-top: 1.2rem;
+    }
+
+    .visit-gallery {
+      display: grid;
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .visit-shot {
+      position: relative;
+      display: grid;
+      grid-template-rows: minmax(320px, 1fr) auto;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 18px 38px rgba(11, 14, 21, 0.22);
+      background: rgba(15, 20, 31, 0.34);
+    }
+
+    .visit-shot-frame {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 320px;
+      padding: 1rem;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 28%),
+        linear-gradient(135deg, rgba(49, 95, 183, 0.18), transparent 45%);
+    }
+
+    .visit-shot img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 16px;
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .visit-shot-copy {
+      padding: 0.9rem 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(17, 24, 40, 0.52);
+    }
+
+    .visit-shot-copy p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .visit-map {
+      min-height: 320px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 1.25rem;
+    }
+
+    .visit-map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: 0;
+      display: block;
+    }
+
+    footer {
+      padding: 1.4rem 0 6rem;
+      text-align: center;
+      color: #7f6d5c;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .catering-card,
+      .menu-group,
+      .visit-card {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-items {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-item-card img {
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-links .nav-cta {
+        gap: 0;
+        padding: 0.75rem 1.2rem;
+      }
+
+      .nav-cta-offer {
+        display: none;
+      }
+
+      .hero-inner {
+        padding: 4rem 0;
+      }
+
+      .hero-slide {
+        transform: translateY(18px);
+      }
+
+      .hero-slide.is-active {
+        transform: translateY(0);
+      }
+
+      .menu-frame,
+      .visit-card {
+        padding: 1.3rem;
+      }
+
+      .catering-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visit-shot {
+        grid-template-rows: minmax(240px, 1fr) auto;
+      }
+
+      .visit-shot-frame {
+        min-height: 240px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#home" id="home-link">
+        <img src="assets/products/compressed/sagarmathaMomoLogo-compressed.webp" alt="Sagarmatha Momo logo" />
+        <span class="brand-copy">
+          <strong>Sagarmatha Momo</strong>
+          <span>Nepalese and Indian Kitchen</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#catering">Catering</a>
+        <a href="#visit">Visit</a>
+        <a class="nav-cta order-trigger-button" href="#order" id="order-online-button">
+          <span>Order Online</span>
+          <span class="nav-cta-offer">20% Off</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <img class="hero-mark" src="assets/products/compressed/sagarmathaMomoLogo-compressed.webp" alt="Sagarmatha Momo logo" />
+        <h1>Fresh momos, curries, and comfort food in Pflugerville.</h1>
+        <p>
+          Welcome to our Kitchen! We are pleased to share with you a little taste from Nepal.
+          Come join us and try our delectable momo!
+        </p>
+        <div class="hero-promo" id="promo">
+          <span class="hero-promo-kicker">Limited-Time Offer</span>
+          <strong>Grand Opening 20% Off</strong>
+          <p>Celebrate with us and enjoy 20% off your order for a limited time when you order online.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="cta order-trigger-button" href="#order" id="promo-order-button">Claim 20% Off Online</a>
+          <a class="cta-secondary" href="#menu">Browse the Menu</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">Family-Owned</span>
+          <span class="badge">Pickup & Delivery</span>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <div class="hero-slider" id="hero-slider" aria-live="polite">
+          <article class="hero-slide is-active">
+            <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo dish" />
+            <div class="hero-panel-copy">
+              <strong>Sadheko Momo</strong>
+              <p>Steamed momo tossed with fresh cut herbs, ginger, green onions, and our house special tomato-based sauce.</p>
+              <div class="hero-slide-meta">
+                <span class="hero-slide-timer">Bold Flavor</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <img src="assets/products/ChickenCurry.jpeg" alt="Boneless chicken curry bowl" />
+            <div class="hero-panel-copy">
+              <strong>Boneless Chicken Curry</strong>
+              <p>Boneless chicken simmered with onion, tomato, garlic, ginger, and traditional house spices, served rich and comforting.</p>
+              <div class="hero-slide-meta">
+                <span class="hero-slide-timer">House Special Curry</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <img src="assets/products/Bhaktaput_Jhol_Momo.jpg" alt="Bhaktapur jhol momo dish" />
+            <div class="hero-panel-copy">
+              <strong>Bhaktapur Jhol Momo</strong>
+              <p>Steamed momo served with a chilled, tangy jhol made with soybeans, spices, and a deep savory finish.</p>
+              <div class="hero-slide-meta">
+                <span class="hero-slide-timer">Street Favorate from Bhaktapur, Nepal</span>
+              </div>
+            </div>
+          </article>
+
+          <div class="hero-slider-controls">
+            <div class="hero-dots" aria-label="Featured dishes">
+              <button class="hero-dot is-active" type="button" aria-label="Show Sadheko Momo"></button>
+              <button class="hero-dot" type="button" aria-label="Show Boneless Chicken Curry"></button>
+              <button class="hero-dot" type="button" aria-label="Show Bhaktapur Jhol Momo"></button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="menu">
+    <div class="section-header">
+      <h2 class="section-title menu-title">Menu</h2>
+      <p class="section-subtitle">
+        Many of options to fit nearly every tastebud. Try our Momo dumplings today!
+      </p>
+    </div>
+
+    <div class="menu-frame">
+      <div class="menu-categories">
+        <a href="#momos">Momos</a>
+        <a href="#curries">Curries</a>
+        <a href="#rice-noodles">Rice & Noodles</a>
+        <a href="#snacks">Snacks</a>
+        <a href="#dessert">Dessert</a>
+        <a href="#sides">Sides</a>
+        <a href="#drinks">Drinks</a>
+      </div>
+      <div class="menu-legend">
+        <span class="tag vegan">Vegan</span>
+        <span class="tag vegetarian">Vegetarian</span>
+        <span class="tag gf">Gluten Free</span>
+      </div>
+      <div class="menu-actions">
+        <a class="cta menu-download" href="assets/menu/Sagarmatha_Momo_Menu6.pdf" target="_blank" rel="noopener">View PDF Menu</a>
+      </div>
+
+      <div class="menu-groups">
+        <article class="menu-group" id="momos">
+          <div class="menu-group-header">
+            <h3>Momos</h3>
+          </div>
+          <p>A variety of choices, from our steamed to our bhaktapur jhol, come in your preferred spice level.</p>
+          <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/Steamed_Momo.jpeg" alt="Steamed momo" />
+                <div class="menu-item-copy">
+                  <strong>Steamed Momo</strong>
+                  <p>Soft steamed dumplings filled with chicken or vegetables, enhanced with Himalayan spices and served warm with our tomato-based house dipping sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Fried_Momo.jpg" alt="Fried momo" />
+                <div class="menu-item-copy">
+                  <strong>Fried Momo</strong>
+                  <p>Crispy fried dumplings filled with chicken or vegetables, enhanced with Himalayan spices and served with our tomato-based house dipping sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/SadhekoMomo.jpeg" alt="Sadheko momo" />
+                <div class="menu-item-copy">
+                  <strong>Sadheko Momo</strong>
+                  <p>Steamed momos tossed with fresh herbs, green onions, ginger, and our house tomato-based sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Crispy_Saucy_Momo.jpg" alt="Crispy saucy momo" />
+                <div class="menu-item-copy">
+                  <strong>Crispy Saucy Momo</strong>
+                  <p>Crispy fried momos glazed in our sweet and savory tomato-based sauce, available mild, medium, or spicy.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Bhaktaput_Jhol_Momo.jpg" alt="Bhaktapur jhol momo" />
+                <div class="menu-item-copy">
+                  <strong>Bhaktapur Jhol Momo</strong>
+                  <p>Steamed momos served in a cold, tangy, tomato-based, soybean and sesame enhanced jhol with fresh herbs and Himalayan spices. Perfect chill for warm Texas weather.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/ChillyMomo.jpeg" alt="Chilly momo" />
+                <div class="menu-item-copy">
+                  <strong>Chilly Momo</strong>
+                  <p>Golden-fried momos tossed in our signature house chili glaze with fresh onions, sweet bell peppers, and jalapeno - crunchy, sweet, and little spice in every bite.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/TatoJholMomo.jpeg" alt="Tato jhol momo" />
+                <div class="menu-item-copy">
+                  <strong>Tato Jhol Momo</strong>
+                  <p>Steamed momos served in a warm, rich, savory tomato jhol (soup) with fresh herbs and Himalayan spices - comforting, aromatic, and soothing.</p>
+                </div>
+              </li>
+          </ul>
+        </article>
+
+        <article class="menu-group" id="curries">
+          <div class="menu-group-header">
+            <h3>Curry</h3>
+          </div>
+          <p>Our curries were especially selected to provide both chicken and vegetable options. <strong>All curries are served with rice.</strong></p>
+          <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/ChickenCurry.jpeg" alt="Boneless chicken curry" />
+                <div class="menu-item-copy">
+                  <strong>Boneless Chicken Curry</strong>
+                  <p>Tender boneless chicken simmered in a rich onion-tomato gravy with fresh ginger, garlic, and Himalayan spices, finished with fresh cilantro.</p>
+                  <div class="menu-tags"><span class="tag gf">GF</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/ChickenShahiKorma.jpeg" alt="Chicken shahi korma" />
+                <div class="menu-item-copy">
+                  <strong>Chicken Shahi Korma</strong>
+                  <p>Boneless chicken simmered in a rich, mild cashew cream sauce with aromatic spices.</p>
+                  <div class="menu-tags"><span class="tag gf">GF</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/AlooBodiTama.jpeg" alt="Aloo bodi tama" />
+                <div class="menu-item-copy">
+                  <strong>Aloo Bodi Tama</strong>
+                  <p>Bamboo shoots, black-eyed peas, and potatoes cooked in a traditional Nepali style curry with little tangy and savory Himalayan flavor.</p>
+                  <div class="menu-tags">
+                    <span class="tag vegan">Vegan</span>
+                    <span class="tag gf">GF</span>
+                  </div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/AlooCauli.jpeg" alt="Aloo cauli" />
+                <div class="menu-item-copy">
+                  <strong>Aloo Cauli</strong>
+                  <p>Cauliflower and potatoes cooked in a homestyle curry with fresh herbs and Himalayan spices.</p>
+                  <div class="menu-tags">
+                    <span class="tag vegan">Vegan</span>
+                    <span class="tag gf">GF</span>
+                  </div>
+                </div>
+              </li>
+          </ul>
+        </article>
+
+        <article class="menu-group" id="rice-noodles">
+          <div class="menu-group-header">
+            <h3>Rice and Noodles</h3>
+          </div>
+          <p>Simple dishes with a lot of flavor are words to explain how rich in seasoniing our rice and even noodles compare. Too good to share!</p>
+          <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/Biryani.jpg" alt="Chicken biryani" />
+                <div class="menu-item-copy">
+                  <strong>Chicken Biryani</strong>
+                  <p>Fragrant basmati layered with tender chicken, herbs, and Himalayan spices - cardamom, cloves, cinnamon, cumin, fennel, turmeric and saffron for a spice-packed, aromatic finish.</p>
+                  <div class="menu-tags"><span class="tag gf">GF</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/FriedRice.jpeg" alt="Fried rice" />
+                <div class="menu-item-copy">
+                  <strong>Fried Rice</strong>
+                  <p>Stir-fried rice with fresh vegetables, caramelized green onions, and savory house seasoning - add chicken, egg, and/or shrimp to your liking.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Chowmein.jpeg" alt="Chowmein" />
+                <div class="menu-item-copy">
+                  <strong>Chowmein</strong>
+                  <p>Stir-fried noodles tossed with fresh vegetables and savory house seasoning for a classic street-style favorite - add chicken, egg, and/or shrimp to your liking.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+          </ul>
+        </article>
+
+        <article class="menu-group" id="snacks">
+          <div class="menu-group-header">
+            <h3>Snacks</h3>
+          </div>
+          <p>A burst full of flavor with every bite, these appetizer sized portions deliver some of the lightest options.</p>
+          <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/Samosas.jpeg" alt="Samosas" />
+                <div class="menu-item-copy">
+                  <strong>Samosas</strong>
+                  <p>Crispy pastries filled with seasoned potatoes, peas, and warm Himalayan spices.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Chicken65.jpeg" alt="Chicken 65" />
+                <div class="menu-item-copy">
+                  <strong>Chicken 65</strong>
+                  <p>Crispy chicken tossed with chili, herbs, and bold house spices for a flavorful bite.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/GobiManchurian.jpeg" alt="Gobi manchurian" />
+                <div class="menu-item-copy">
+                  <strong>Gobi Manchurian</strong>
+                  <p>Crispy cauliflower tossed in a savory-spicy house sauce with fresh herbs and aromatics.</p>
+                  <div class="menu-tags"><span class="tag vegan">Vegan</span></div>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/ChickenChilly.jpeg" alt="Chicken chilly" />
+                <div class="menu-item-copy">
+                  <strong>Chicken Chilly</strong>
+                  <p>Tender boneless chicken tossed with onions, peppers, jalapeno, and bold house chili sauce.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/PaneerChilly.jpeg" alt="Paneer chilly" />
+                <div class="menu-item-copy">
+                  <strong>Paneer Chilly</strong>
+                  <p>Crispy paneer cheese cubes tossed with onions, peppers, jalapeno, and our savory house chili sauce.</p>
+                  <div class="menu-tags">
+                    <span class="tag vegetarian">Vegetarian</span>
+                  </div>
+                </div>
+              </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="menu-groups">
+        <article class="menu-group" id="dessert">
+          <div class="menu-group-header">
+            <h3>Dessert</h3>
+          </div>
+          <p>In for a sweet treat, light and tasty, our desserts come from those traditionally served.</p>
+          <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/Kheer.jpeg" alt="Kheer" />
+                <div class="menu-item-copy">
+                  <strong>Kheer</strong>
+                  <p>Traditional rice pudding slowly cooked with milk for a creamy, lightly sweet finish.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/LalMohan.jpeg" alt="Lal mohan" />
+                <div class="menu-item-copy">
+                  <strong>Lal Mohan</strong>
+                  <p>Soft milk-based dumplings soaked in sweet syrup for a rich, indulgent dessert.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Rasmalai.jpeg" alt="Rasmalai" />
+                <div class="menu-item-copy">
+                  <strong>Rasmalai</strong>
+                  <p>Tender cheese dumplings soaked in sweetened milk for a light, creamy finish.</p>
+                </div>
+              </li>
+          </ul>
+        </article>
+
+        <article class="menu-group" id="sides">
+          <div class="menu-group-header">
+            <h3>Sides</h3>
+          </div>
+          <p>The add-ons keep coming with some of our easiest pairings. Our radish pickle is availble in large sizes as well.</p>
+          <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/SpecialParatha.jpeg" alt="Special paratha" />
+                <div class="menu-item-copy">
+                  <strong>Special Paratha</strong>
+                  <p>Flaky layered flatbread that pairs perfectly with curries and savory dishes.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Fries.jpeg" alt="Fries" />
+                <div class="menu-item-copy">
+                  <strong>Fries</strong>
+                  <p>Golden fries with a crisp outside and soft center, lightly salted finish.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/BasmatiRice.jpeg" alt="Basmati rice" />
+                <div class="menu-item-copy">
+                  <strong>Basmati Rice</strong>
+                  <p>Steamed basmati rice with a soft, fluffy texture that pairs well with rich dishes.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/RadishPickel.jpeg" alt="Radish pickle" />
+                <div class="menu-item-copy">
+                  <strong>Radish Pickle</strong>
+                  <p>Tangy radish pickle that adds a bright, bold kick to rich savory dishes.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/Raita.jpeg" alt="Raita" />
+                <div class="menu-item-copy">
+                  <strong>Raita</strong>
+                  <p>Cool yogurt sauce infused with herbs and Himalayan spices - a smooth, refreshing balance to spicy dishes.</p>
+                </div>
+              </li>
+          </ul>
+        </article>
+
+        <article class="menu-group" id="drinks">
+          <div class="menu-group-header">
+            <h3>Drinks</h3>
+          </div>
+          <p>To help calm the savory tastes, we offer an in-house made mango lassi. Try today!</p>
+          <ul class="menu-items">
+              <li class="menu-item-card">
+                <img src="assets/products/MangoLassi.jpeg" alt="Mango lassi" />
+                <div class="menu-item-copy">
+                  <strong>Mango Lassi</strong>
+                  <p>A smooth and creamy mango yogurt drink with a sweet, refreshing finish.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/compressed/Soda-compressed.webp" alt="Soda" />
+                <div class="menu-item-copy">
+                  <strong>Soda</strong>
+                  <p>Chilled soda options like Coke or Dr. Pepper, for a simple, refreshing drink.</p>
+                </div>
+              </li>
+              <li class="menu-item-card">
+                <img src="assets/products/compressed/water-compressed.webp" alt="Bottled water" />
+                <div class="menu-item-copy">
+                  <strong>Bottled Water</strong>
+                  <p>Simple bottled water for easy refreshment with any meal.</p>
+                </div>
+              </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="catering">
+    <div class="catering-card">
+      <h2 class="section-title catering-heading">Catering for Events</h2>
+      <div class="catering-image">
+        <img src="assets/compressed/Catering-compressed.webp" alt="Sagarmatha Momo catering dishes" />
+        <p class="catering-image-caption">Party trays and event spreads prepared for office lunches, family gatherings, and community celebrations.</p>
+      </div>
+      <div class="catering-copy">
+        <p>
+          From family gatherings to office lunches and community celebrations, Sagarmatha Momo brings bold flavor and crowd-pleasing favorites to events of every size.
+        </p>
+        <p>
+          For customized items and pricing, please call us to create a catering order that fits your event.
+        </p>
+        <div class="catering-menu" aria-label="Catering tray menu">
+          <div class="catering-menu-header">
+            <strong>Catering Menu</strong>
+          </div>
+          <ul class="catering-menu-list">
+            <li class="catering-menu-item">
+              <strong>Appitizers and Snacks</strong><br />
+              Samosas, Chicken 65, Chicken/Paneer Chilly ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Main Meat</strong><br />
+              Boneless Chicken Curry, Goat Curry (Bone-In) ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Main Veg</strong><br />
+              Aloo Bodi Tama, Aloo Cauli, Yellow Dal, Mustard Greens Saag ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Carbs</strong><br />
+              Basmati Rice, Pulao, Biryani ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Sides</strong><br />
+              Salads, Tomato Pickles, Radish Pickle ...
+            </li>
+            <li class="catering-menu-item">
+              <strong>Drink</strong><br />
+              Masala Milk Tea, Mango Lassi ...
+            </li>
+          </ul>
+          <p class="catering-menu-note"><strong>And many more ...</strong></p>
+        </div>
+        <form
+          class="catering-form"
+          id="catering-quote-form"
+          action="https://formspree.io/f/mvzvjapy"
+          method="POST">
+          <h3>Request a Quote</h3>
+          <p class="catering-form-intro">Share a few details and we will receive your quote request directly by email.</p>
+          <input type="hidden" name="_subject" value="New Catering Quote Request - Sagarmatha Momo" />
+          <input type="hidden" name="form_name" value="Catering Quote Request" />
+          <div class="catering-form-grid">
+            <div class="catering-field">
+              <label for="quote-name">Full Name</label>
+              <input id="quote-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-phone">Phone Number</label>
+              <input id="quote-phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-email">Email Address</label>
+              <input id="quote-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-date">Event Date</label>
+              <input id="quote-date" name="event-date" type="date" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-guests">Guest Count</label>
+              <input id="quote-guests" name="guests" type="number" min="1" step="1" placeholder="Approximate guest count" required />
+            </div>
+            <div class="catering-field">
+              <label for="quote-type">Event Type</label>
+              <select id="quote-type" name="event-type" required>
+                <option value="">Select one</option>
+                <option>Office Lunch</option>
+                <option>Birthday Party</option>
+                <option>Wedding Event</option>
+                <option>Family Gathering</option>
+                <option>Community Event</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="catering-field catering-field-full">
+              <label for="quote-details">What would you like us to cater?</label>
+              <textarea id="quote-details" name="details" placeholder="Tell us what food you are interested in, pickup or delivery, preferred time, and anything else we should know." required></textarea>
+            </div>
+          </div>
+          <div class="catering-form-actions">
+            <button class="cta catering-submit" type="submit">Send Quote Request</button>
+            <div class="catering-secondary-actions">
+              <a class="cta" href="tel:+15125548941">Call for Catering</a>
+              <a class="cta-secondary" href="#visit">Visit Us</a>
+            </div>
+            <span class="catering-form-note">We will receive this request directly after you submit the form.</span>
+          </div>
+          <div class="catering-form-status" id="catering-form-status" aria-live="polite" role="status">
+            <span class="catering-form-status-icon" id="catering-form-status-icon" aria-hidden="true"></span>
+            <div class="catering-form-status-copy">
+              <strong id="catering-form-status-title"></strong>
+              <span id="catering-form-status-message"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="visit-card">
+      <h2 class="section-title visit-heading">Visit Sagarmatha Momo</h2>
+      <div class="visit-copy">
+        <div class="visit-map">
+          <iframe
+            title="Sagarmatha Momo map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=20205%20FM%20685%20Suite%20250%2C%20Pflugerville%2C%20TX%2078660&z=15&output=embed">
+          </iframe>
+        </div>
+        <p>Pickup and delivery available.</p>
+        <div class="visit-details">
+          <a class="visit-link" href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">
+            <strong>20205 FM 685 Suite 250, Pflugerville, TX 78660</strong>
+          </a>
+          <a class="visit-link" href="tel:+15125548941">
+            <strong>(512) 554-8941</strong>
+          </a>
+        </div>
+        <div class="visit-actions">
+          <details class="map-options map-options-cta">
+            <summary>Get Directions</summary>
+            <div class="map-links">
+              <a href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">Google Maps</a>
+              <a href="https://maps.apple.com/?q=20205+FM+685+Suite+250,+Pflugerville,+TX+78660" target="_blank" rel="noopener noreferrer">Apple Maps</a>
+              <a href="https://waze.com/ul/h9v6t7mmsb" target="_blank" rel="noopener noreferrer">Waze</a>
+            </div>
+          </details>
+        </div>
+        <div class="nearby-note">
+          <p>Nearby Attraction</p>
+          <div class="nearby-card">
+            <img src="assets/compressed/Temple-compressed.webp" alt="Nepalese Temple Pashupatinath" />
+            <a class="visit-link" href="https://maps.app.goo.gl/AzMzoWY6wipX69C17" target="_blank" rel="noopener noreferrer">
+              <strong>Nepalese Temple Pashupatinath</strong>
+            </a>
+          </div>
+        </div>
+        <div class="visit-actions">
+          <a class="cta-secondary" href="#home">Back to Top</a>
+        </div>
+      </div>
+      <div class="visit-gallery" aria-label="Interior photos of Sagarmatha Momo">
+        <figure class="visit-shot">
+          <div class="visit-shot-frame">
+            <img src="assets/compressed/DineIn1-compressed.webp" alt="Interior seating area at Sagarmatha Momo with front windows and tables" />
+          </div>
+          <div class="visit-shot-copy">
+            <p>Step inside and see the cozy space that welcomes every guest.</p>
+          </div>
+        </figure>
+        <figure class="visit-shot">
+          <div class="visit-shot-frame">
+            <img src="assets/compressed/DineIn2-compressed.webp" alt="Additional interior view of Sagarmatha Momo seating area" />
+          </div>
+          <div class="visit-shot-copy">
+            <p>Get a feel for our welcoming space before you stop by.</p>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Sagarmatha Momo. Nepalese and Indian comfort food in Pflugerville.
+  </footer>
+
+  <script>
+    !function(e,t,r,n){var o,c,s;o=e.document,c=t.children[0],s=o.createElement("script"),e.StorefrontSDKObject="StorefrontSDK",e[e.StorefrontSDKObject]={executeCommand:function(t,r){e[e.StorefrontSDKObject].buffer.push([t,r])},buffer:[]},s.async=1,s.src="https://web-assets.cdn4dd.com/prod/storefront-sdk/latest/app.js",t.insertBefore(s,c)}(window,document.head);
+    var storefrontTrigger = null;
+    var triggerText = 'Order Pickup & Delivery';
+
+    function findStorefrontTrigger() {
+      var candidates = Array.from(document.querySelectorAll('button, a'));
+      return candidates.find(function (element) {
+        return !element.classList.contains('order-trigger-button') &&
+          element.textContent &&
+          element.textContent.trim() === triggerText;
+      }) || null;
+    }
+
+    function cacheAndHideStorefrontTrigger() {
+      storefrontTrigger = findStorefrontTrigger();
+      if (!storefrontTrigger) return;
+
+      storefrontTrigger.style.position = 'fixed';
+      storefrontTrigger.style.left = '-9999px';
+      storefrontTrigger.style.bottom = 'auto';
+      storefrontTrigger.style.opacity = '0';
+      storefrontTrigger.style.pointerEvents = 'none';
+    }
+
+    function openOrderModal() {
+      if (!storefrontTrigger) {
+        cacheAndHideStorefrontTrigger();
+      }
+
+      if (storefrontTrigger) {
+        storefrontTrigger.click();
+        return true;
+      }
+
+      return false;
+    }
+
+    function normalizeText(value) {
+      return (value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function findTextElement(selectors, expectedText, root) {
+      var scope = root || document;
+      return Array.from(scope.querySelectorAll(selectors)).find(function (element) {
+        return normalizeText(element.textContent) === expectedText;
+      }) || null;
+    }
+
+    function findCommonAncestor(elements) {
+      if (!elements.length) return null;
+
+      var ancestor = elements[0];
+      while (ancestor && ancestor !== document.body) {
+        var containsAll = elements.every(function (element) {
+          return ancestor.contains(element);
+        });
+
+        if (containsAll) {
+          return ancestor;
+        }
+
+        ancestor = ancestor.parentElement;
+      }
+
+      return null;
+    }
+
+    function findStorefrontModal() {
+      var deliveryButton = findTextElement('button, a, [role="button"]', 'Order Delivery');
+      var pickupButton = findTextElement('button, a, [role="button"]', 'Order Pickup');
+      var heading = findTextElement('h1, h2, h3, strong, div, span, p', 'Order Now');
+
+      if (!deliveryButton || !pickupButton || !heading) return null;
+
+      return deliveryButton.closest('[role="dialog"], [aria-modal="true"]') ||
+        heading.closest('[role="dialog"], [aria-modal="true"]') ||
+        findCommonAncestor([deliveryButton, pickupButton, heading]);
+    }
+
+    function decorateStorefrontModal() {
+      var modal = findStorefrontModal();
+      if (!modal || modal.querySelector('.storefront-offer-banner')) return;
+
+      var heading = findTextElement('h1, h2, h3, strong, div, span, p', 'Order Now', modal);
+      if (!heading || !heading.parentElement) return;
+
+      var offerBanner = document.createElement('div');
+      offerBanner.className = 'storefront-offer-banner';
+      offerBanner.innerHTML =
+        '<span class="storefront-offer-banner-kicker">Limited-Time Offer</span>' +
+        '<strong>Get 20% Off Your Order</strong>' +
+        '<p>Celebrate our grand opening and enjoy 20% off when you order online.</p>';
+
+      heading.insertAdjacentElement('afterend', offerBanner);
+    }
+
+    var storefrontObserver = new MutationObserver(function () {
+      if (!storefrontTrigger) {
+        cacheAndHideStorefrontTrigger();
+      }
+
+      decorateStorefrontModal();
+    });
+
+    storefrontObserver.observe(document.body, { childList: true, subtree: true });
+
+    document.getElementById('home-link')?.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('.order-trigger-button').forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        openOrderModal();
+        window.setTimeout(decorateStorefrontModal, 150);
+        window.setTimeout(decorateStorefrontModal, 500);
+      });
+    });
+
+    var orderPageParams = new URLSearchParams(window.location.search);
+    var shouldOpenOrderModal = orderPageParams.get('openOrder') === '1';
+
+    if (shouldOpenOrderModal) {
+      var orderModalAttempts = 0;
+      var orderModalInterval = window.setInterval(function () {
+        orderModalAttempts += 1;
+
+        if (openOrderModal() || orderModalAttempts >= 20) {
+          window.clearInterval(orderModalInterval);
+          if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+          }
+        }
+      }, 400);
+    }
+
+    var cateringQuoteForm = document.getElementById('catering-quote-form');
+    var cateringFormStatus = document.getElementById('catering-form-status');
+    var cateringFormStatusIcon = document.getElementById('catering-form-status-icon');
+    var cateringFormStatusTitle = document.getElementById('catering-form-status-title');
+    var cateringFormStatusMessage = document.getElementById('catering-form-status-message');
+
+    function setCateringFormState(state, title, message) {
+      if (!cateringQuoteForm || !cateringFormStatus) return;
+
+      cateringQuoteForm.classList.remove('is-submitting', 'is-success', 'is-error');
+      cateringFormStatus.classList.remove('is-visible', 'is-sending', 'is-success', 'is-error');
+
+      if (!state) {
+        if (cateringFormStatusTitle) cateringFormStatusTitle.textContent = '';
+        if (cateringFormStatusMessage) cateringFormStatusMessage.textContent = '';
+        if (cateringFormStatusIcon) cateringFormStatusIcon.textContent = '';
+        return;
+      }
+
+      var formStateClass = state === 'sending' ? 'is-submitting' : 'is-' + state;
+      var statusStateClass = state === 'sending' ? 'is-sending' : 'is-' + state;
+      var iconMap = {
+        sending: '...',
+        success: 'OK',
+        error: '!'
+      };
+
+      cateringQuoteForm.classList.add(formStateClass);
+      cateringFormStatus.classList.add('is-visible', statusStateClass);
+
+      if (cateringFormStatusIcon) cateringFormStatusIcon.textContent = iconMap[state] || '';
+      if (cateringFormStatusTitle) cateringFormStatusTitle.textContent = title || '';
+      if (cateringFormStatusMessage) cateringFormStatusMessage.textContent = message || '';
+    }
+
+    cateringQuoteForm?.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      var endpoint = cateringQuoteForm.getAttribute('action') || '';
+      var submitButton = cateringQuoteForm.querySelector('button[type="submit"]');
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      setCateringFormState(
+        'sending',
+        'Sending your request',
+        'We are submitting your catering quote request now.'
+      );
+
+      try {
+        var response = await fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(cateringQuoteForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          cateringQuoteForm.reset();
+          setCateringFormState(
+            'success',
+            'Quote request sent',
+            'Thank you! We received your catering quote request and sent a confirmation email.'
+          );
+          cateringQuoteForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          return;
+        }
+
+        setCateringFormState(
+          'error',
+          'Request not sent',
+          'Something went wrong. Please call us directly for catering.'
+        );
+      } catch (error) {
+        setCateringFormState(
+          'error',
+          'Request not sent',
+          'Something went wrong. Please call us directly for catering.'
+        );
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Quote Request';
+        }
+      }
+    });
+
+    var heroSlider = document.getElementById('hero-slider');
+    var heroSlides = heroSlider ? Array.from(heroSlider.querySelectorAll('.hero-slide')) : [];
+    var heroControls = heroSlider
+      ? Array.from(heroSlider.querySelectorAll('.hero-slider-controls .hero-dot'))
+      : [];
+    var activeHeroIndex = 0;
+    var heroInterval = null;
+
+    function setHeroSlide(index) {
+      heroSlides.forEach(function (slide, slideIndex) {
+        slide.classList.toggle('is-active', slideIndex === index);
+      });
+
+      heroControls.forEach(function (dot, dotIndex) {
+        dot.classList.toggle('is-active', dotIndex === index);
+        dot.setAttribute('aria-pressed', dotIndex === index ? 'true' : 'false');
+      });
+
+      activeHeroIndex = index;
+    }
+
+    function advanceHeroSlide() {
+      if (!heroSlides.length) return;
+      setHeroSlide((activeHeroIndex + 1) % heroSlides.length);
+    }
+
+    function startHeroSlider() {
+      if (heroInterval || heroSlides.length < 2) return;
+      heroInterval = window.setInterval(advanceHeroSlide, 3000);
+    }
+
+    function resetHeroSlider(index) {
+      if (heroInterval) {
+        window.clearInterval(heroInterval);
+        heroInterval = null;
+      }
+      setHeroSlide(index);
+      startHeroSlider();
+    }
+
+    heroControls.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        resetHeroSlider(index);
+      });
+    });
+
+    heroSlider?.addEventListener('mouseenter', function () {
+      if (heroInterval) {
+        window.clearInterval(heroInterval);
+        heroInterval = null;
+      }
+    });
+
+    heroSlider?.addEventListener('mouseleave', function () {
+      startHeroSlider();
+    });
+
+    setHeroSlide(0);
+    startHeroSlider();
+
+    StorefrontSDK.executeCommand('renderFloatingButton',
+      {
+        businessId: 18291929,
+        businessSlug: 'SagarmathaMomo',
+        floatingBar: true,
+        position: 'bottom',
+        buttonAlignment: 'center',
+        backgroundColor: 'transparent',
+        buttonBackgroundColor: '#bf4a17',
+        borderColor: 'transparent',
+        buttonText: triggerText,
+        showModal: true,
+      }
+    )
+  </script>
+</body>
+</html>
