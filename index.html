@@ -238,6 +238,22 @@
       font-size: 0.92rem;
     }
 
+    .offer-badge {
+      padding: 0.78rem 1.1rem;
+      background: linear-gradient(135deg, rgba(241, 187, 87, 0.95), rgba(255, 218, 136, 0.94));
+      border-color: rgba(255, 255, 255, 0.26);
+      color: var(--night);
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .hero-copy .offer-note {
+      margin-top: 0.7rem;
+      margin-bottom: 0;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
     .hero-panel {
       position: relative;
       border-radius: 30px;
@@ -368,6 +384,104 @@
     .section-subtitle {
       max-width: 760px;
       color: var(--muted);
+    }
+
+    .reviews-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .review-score-card,
+    .review-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .review-score-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.4rem;
+      color: var(--snow);
+      background:
+        radial-gradient(circle at top right, rgba(241, 187, 87, 0.26), transparent 32%),
+        linear-gradient(135deg, rgba(29, 39, 64, 0.97), rgba(49, 95, 183, 0.92));
+    }
+
+    .review-score-label,
+    .review-card cite {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+    }
+
+    .review-score-label {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .review-score {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.85rem;
+    }
+
+    .review-score strong {
+      font-family: Baskerville, "Times New Roman", serif;
+      font-size: clamp(3.5rem, 8vw, 5.4rem);
+      line-height: 0.85;
+      color: var(--snow);
+    }
+
+    .review-stars {
+      display: inline-flex;
+      color: var(--gold);
+      font-size: 1.05rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .review-score-card p {
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .review-link {
+      width: 100%;
+      margin-top: auto;
+      color: var(--night);
+      text-align: center;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .review-card {
+      display: grid;
+      gap: 0.9rem;
+      align-content: start;
+      min-height: 100%;
+      padding: 1.15rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 248, 239, 0.92)),
+        var(--snow);
+    }
+
+    .review-card blockquote {
+      color: var(--night);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    .review-card cite {
+      align-self: end;
+      color: var(--ember);
+      font-style: normal;
     }
 
     .menu-frame,
@@ -1148,6 +1262,11 @@
         grid-template-columns: 1fr;
       }
 
+      .reviews-layout,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
       .menu-item-card img {
         min-height: 240px;
       }
@@ -1161,7 +1280,22 @@
 
       .nav-links {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 0.55rem;
+      }
+
+      .nav-links a {
+        font-size: 0.92rem;
+      }
+
+      .nav-links .nav-cta {
+        padding: 0.65rem 0.9rem;
+      }
+
+      header,
+      section,
+      .menu-group {
+        scroll-margin-top: 13rem;
       }
 
       .hero-inner {
@@ -1208,6 +1342,7 @@
       </a>
       <div class="nav-links">
         <a href="#menu">Menu</a>
+        <a href="#reviews">Reviews</a>
         <a href="#catering">Catering</a>
         <a href="#visit">Visit</a>
         <a class="nav-cta" href="#order" id="order-online-button">Order Online</a>
@@ -1227,7 +1362,9 @@
         <div class="hero-badges">
           <span class="badge">Family-Owned</span>
           <span class="badge">Pickup & Delivery</span>
+          <span class="badge offer-badge">Limited time: 20% off $50 or more*</span>
         </div>
+        <p class="offer-note">*Limited-time offer. Valid on qualifying orders of $50 or more.</p>
       </div>
 
       <aside class="hero-panel">
@@ -1596,6 +1733,54 @@
                 </div>
               </li>
           </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-header">
+      <span class="section-label">Google Reviews</span>
+      <h2 class="section-title">What guests are saying</h2>
+      <p class="section-subtitle">
+        Guests call out the warm family service, neighborhood feel, and fresh favorites from the kitchen.
+      </p>
+    </div>
+
+    <div class="reviews-layout" aria-label="Google review highlights">
+      <aside class="review-score-card">
+        <span class="review-score-label">Google rating</span>
+        <div class="review-score">
+          <strong>4.9</strong>
+          <span class="review-stars" aria-label="4.9 out of 5 stars on Google">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <p>Recent Google reviewers highlight kind service, family-run hospitality, and fresh, flavorful food.</p>
+        <a class="cta review-link" href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">Read Reviews on Google</a>
+      </aside>
+
+      <div class="review-grid">
+        <article class="review-card">
+          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>
+            <p>Owner/staff very kind, sweet family restaurant.</p>
+          </blockquote>
+          <cite>Google review</cite>
+        </article>
+
+        <article class="review-card">
+          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>
+            <p>So glad to have this family-run take-out restaurant in my neighborhood!</p>
+          </blockquote>
+          <cite>Google review</cite>
+        </article>
+
+        <article class="review-card">
+          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>
+            <p>The samosas were fresh, crispy, and packed with delicious filling.</p>
+          </blockquote>
+          <cite>Google review</cite>
         </article>
       </div>
     </div>
