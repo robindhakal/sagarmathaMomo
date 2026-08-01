@@ -340,6 +340,14 @@
       scroll-margin-top: 7.5rem;
     }
 
+    #reviews {
+      padding-bottom: 2.1rem;
+    }
+
+    #reviews + #menu {
+      padding-top: 2.1rem;
+    }
+
     .section-header {
       display: grid;
       gap: 0.75rem;
@@ -447,6 +455,7 @@
 
     .review-card {
       display: grid;
+      grid-template-rows: auto 1fr auto;
       gap: 0.9rem;
       align-content: start;
       min-height: 100%;
@@ -1272,8 +1281,8 @@
         </span>
       </a>
       <div class="nav-links">
-        <a href="#menu">Menu</a>
         <a href="#reviews">Reviews</a>
+        <a href="#menu">Menu</a>
         <a href="#catering">Catering</a>
         <a href="#visit">Visit</a>
         <a class="nav-cta" href="#order" id="order-online-button">Order Online</a>
@@ -1342,6 +1351,54 @@
       </aside>
     </div>
   </header>
+
+  <section id="reviews">
+    <div class="section-header">
+      <span class="section-label">Google Reviews</span>
+      <h2 class="section-title">What guests are saying</h2>
+      <p class="section-subtitle">
+        Real guest notes from our neighborhood table, takeout bags, and first-time momo cravings.
+      </p>
+    </div>
+
+    <div class="reviews-layout" aria-label="Google review excerpts">
+      <aside class="review-score-card">
+        <span class="review-score-label">Google rating</span>
+        <div class="review-score">
+          <strong>4.9</strong>
+          <span class="review-stars" aria-label="4.9 out of 5 stars on Google">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <p>People praise the authentic Nepali flavors, juicy jhol and sadheko momos, generous portions, fresh ingredients, friendly service, and cozy atmosphere.</p>
+        <a class="cta review-link" href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">Read Reviews on Google</a>
+      </aside>
+
+      <div class="review-grid">
+        <article class="review-card">
+          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>
+            <p>I had a fantastic experience at Sagarmatha Momo! The steamed momos were delicious, the curry was rich and flavorful, and the service was warm and attentive.</p>
+          </blockquote>
+          <cite>Rakesh</cite>
+        </article>
+
+        <article class="review-card">
+          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>
+            <p>In between bites I literally kept saying outload "It's sooo goooddd." For me, the medium spice level was perfect combo for a lil zest and flavor.</p>
+          </blockquote>
+          <cite>Ryan</cite>
+        </article>
+
+        <article class="review-card">
+          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <blockquote>
+            <p>It's a cozy little restaurant and the chef is serving up dishes hot out of the kitchen. We had momo, chicken shahi korma, mango lassi, and paratha. It was all so freaking good &#128293; &#128558;&#8205;&#128168;&#128523;&#128588;&#127997;</p>
+          </blockquote>
+          <cite>Lena</cite>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section id="menu">
     <div class="section-header">
@@ -1670,54 +1727,6 @@
                 </div>
               </li>
           </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="reviews">
-    <div class="section-header">
-      <span class="section-label">Google Reviews</span>
-      <h2 class="section-title">What guests are saying</h2>
-      <p class="section-subtitle">
-        Guests call out the warm family service, neighborhood feel, and fresh favorites from the kitchen.
-      </p>
-    </div>
-
-    <div class="reviews-layout" aria-label="Google review highlights">
-      <aside class="review-score-card">
-        <span class="review-score-label">Google rating</span>
-        <div class="review-score">
-          <strong>4.9</strong>
-          <span class="review-stars" aria-label="4.9 out of 5 stars on Google">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        </div>
-        <p>Recent Google reviewers highlight kind service, family-run hospitality, and fresh, flavorful food.</p>
-        <a class="cta review-link" href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">Read Reviews on Google</a>
-      </aside>
-
-      <div class="review-grid">
-        <article class="review-card">
-          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <blockquote>
-            <p>Owner/staff very kind, sweet family restaurant.</p>
-          </blockquote>
-          <cite>Google review</cite>
-        </article>
-
-        <article class="review-card">
-          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <blockquote>
-            <p>So glad to have this family-run take-out restaurant in my neighborhood!</p>
-          </blockquote>
-          <cite>Google review</cite>
-        </article>
-
-        <article class="review-card">
-          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <blockquote>
-            <p>The samosas were fresh, crispy, and packed with delicious filling.</p>
-          </blockquote>
-          <cite>Google review</cite>
         </article>
       </div>
     </div>
