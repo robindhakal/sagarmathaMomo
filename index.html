@@ -378,54 +378,17 @@
       color: var(--muted);
     }
 
-    .reviews-layout {
-      display: grid;
-      grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
-      gap: 1rem;
-      align-items: stretch;
-    }
-
-    .review-score-card,
     .review-card {
       border: 1px solid var(--line);
       border-radius: 24px;
       box-shadow: var(--shadow);
     }
 
-    .review-score-card {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1.4rem;
-      color: var(--snow);
-      background:
-        radial-gradient(circle at top right, rgba(241, 187, 87, 0.26), transparent 32%),
-        linear-gradient(135deg, rgba(29, 39, 64, 0.97), rgba(49, 95, 183, 0.92));
-    }
-
-    .review-score-label,
     .review-card cite {
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-weight: 800;
-    }
-
-    .review-score-label {
-      color: rgba(255, 255, 255, 0.74);
-    }
-
-    .review-score {
-      display: flex;
-      align-items: flex-end;
-      gap: 0.85rem;
-    }
-
-    .review-score strong {
-      font-family: Baskerville, "Times New Roman", serif;
-      font-size: clamp(3.5rem, 8vw, 5.4rem);
-      line-height: 0.85;
-      color: var(--snow);
     }
 
     .review-stars {
@@ -434,17 +397,6 @@
       font-size: 1.05rem;
       line-height: 1;
       letter-spacing: 0;
-    }
-
-    .review-score-card p {
-      color: rgba(255, 255, 255, 0.84);
-    }
-
-    .review-link {
-      width: 100%;
-      margin-top: auto;
-      color: var(--night);
-      text-align: center;
     }
 
     .review-grid {
@@ -1206,7 +1158,6 @@
         grid-template-columns: 1fr;
       }
 
-      .reviews-layout,
       .review-grid {
         grid-template-columns: 1fr;
       }
@@ -1361,42 +1312,30 @@
       </p>
     </div>
 
-    <div class="reviews-layout" aria-label="Google review excerpts">
-      <aside class="review-score-card">
-        <span class="review-score-label">Google rating</span>
-        <div class="review-score">
-          <strong>4.9</strong>
-          <span class="review-stars" aria-label="4.9 out of 5 stars on Google">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        </div>
-        <p>People praise the authentic Nepali flavors, juicy jhol and sadheko momos, generous portions, fresh ingredients, friendly service, and cozy atmosphere.</p>
-        <a class="cta review-link" href="https://maps.app.goo.gl/c4HLXP5XQGrL3nz56?g_st=ic" target="_blank" rel="noopener noreferrer">Read Reviews on Google</a>
-      </aside>
+    <div class="review-grid" aria-label="Google review excerpts">
+      <article class="review-card">
+        <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>
+          <p>I had a fantastic experience at Sagarmatha Momo! The steamed momos were delicious, the curry was rich and flavorful, and the service was warm and attentive.</p>
+        </blockquote>
+        <cite>Rakesh</cite>
+      </article>
 
-      <div class="review-grid">
-        <article class="review-card">
-          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <blockquote>
-            <p>I had a fantastic experience at Sagarmatha Momo! The steamed momos were delicious, the curry was rich and flavorful, and the service was warm and attentive.</p>
-          </blockquote>
-          <cite>Rakesh</cite>
-        </article>
+      <article class="review-card">
+        <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>
+          <p>In between bites I literally kept saying outload "It's sooo goooddd." For me, the medium spice level was perfect combo for a lil zest and flavor.</p>
+        </blockquote>
+        <cite>Ryan</cite>
+      </article>
 
-        <article class="review-card">
-          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <blockquote>
-            <p>In between bites I literally kept saying outload "It's sooo goooddd." For me, the medium spice level was perfect combo for a lil zest and flavor.</p>
-          </blockquote>
-          <cite>Ryan</cite>
-        </article>
-
-        <article class="review-card">
-          <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <blockquote>
-            <p>It's a cozy little restaurant and the chef is serving up dishes hot out of the kitchen. We had momo, chicken shahi korma, mango lassi, and paratha. It was all so freaking good &#128293; &#128558;&#8205;&#128168;&#128523;&#128588;&#127997;</p>
-          </blockquote>
-          <cite>Lena</cite>
-        </article>
-      </div>
+      <article class="review-card">
+        <span class="review-stars" aria-label="Five star review">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>
+          <p>It's a cozy little restaurant and the chef is serving up dishes hot out of the kitchen. We had momo, chicken shahi korma, mango lassi, and paratha. It was all so freaking good &#128293; &#128558;&#8205;&#128168;&#128523;&#128588;&#127997;</p>
+        </blockquote>
+        <cite>Lena</cite>
+      </article>
     </div>
   </section>
 
